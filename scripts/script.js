@@ -27,7 +27,9 @@ function sendRequest(){
 			  data: { url : jsonURL }
 			})
 			  .done(function( json_contents ) {
-			    console.log( json_contents );
+			    var jArticles = json_contents;
+          console.log(jArticles["search-results"].entry[0]);
+          
 			  });
     }
     // grab each articles DOI and parse them
