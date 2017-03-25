@@ -15,10 +15,10 @@ function sendRequest(){
           query:  "query=srctitle(" + inFormated +")",
           apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
           count: "&count=100",
-          organize : "&sort=+date",
+          organize : "pub-date+AFT+20170201",
           output: "&httpAccept=application/json",
       }
-      var jsonURL = searchURL + inputData.query + inputData.apiKey + inputData.organize + inputData.output;
+      var jsonURL = searchURL + inputData.query + inputData.apiKey + inputData.count + inputData.organize + inputData.output;
       console.log(jsonURL);
       $.ajax({
 			  method: "GET",
@@ -41,9 +41,10 @@ function sendRequest(){
 function abstractGrabber(data){
   array = data["search-results"].entry;
   var aSearchURL = "http://api.elsevier.com/content/article/"
+  var format = "httpAccept=application/json";
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
-    console.log(doi);
+    console.log(aSearchURL+doi+format);
   }
 }
