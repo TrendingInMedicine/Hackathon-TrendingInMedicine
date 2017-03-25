@@ -60,7 +60,7 @@ function abstractGrabber(data){
     })
     .done(function( json_contents ) {
       console.log(json_contents);
-      var title = json_contents["full-text-retrieval-response"]["dc:title"];
+      var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       console.log(title);
       var res = title.split(" ");
       // for (var i = 0; i < res.length; i++) {
