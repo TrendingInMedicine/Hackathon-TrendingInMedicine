@@ -59,21 +59,21 @@ function abstractGrabber(data){
       data: { url : abstractURL }
     })
     .done(function( json_contents ) {
-      console.log(json_contents);
+      //console.log(json_contents);
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
-      console.log(title);
+      //console.log(title);
       var res = title.split(" ");
-      // for (var i = 0; i < res.length; i++) {
-      //   if (commonWords.has(res[i]) == false){
-      //     if(myMap.has(res[i])){
-      //       var freq = myMap.get(res[i]);
-      //       myMap.set(res[i], freq + 1)
-      //     }
-      //     else{
-      //       myMap.set(res[i], 1)
-      //     }
-      //   }
-      // }
+      for (var i = 0; i < res.length; i++) {
+        if (commonWords.has(res[i]) == false){
+          if(myMap.has(res[i])){
+            var freq = myMap.get(res[i]);
+            myMap.set(res[i], freq + 1)
+          }
+          else{
+            myMap.set(res[i], 1)
+          }
+        }
+      }
     });
   }
 }
