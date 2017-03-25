@@ -50,7 +50,7 @@ function abstractGrabber(data){
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
-    console.log(aSearchURL+doi+format);
+    //console.log(aSearchURL+doi+format);
     abstractURL = aSearchURL + doi + format;
     $.ajax({
       method: "GET",
@@ -59,21 +59,21 @@ function abstractGrabber(data){
       data: { url : abstractURL }
     })
     .done(function( json_contents ) {
-      //console.log(json_contents);
+      console.log(json_contents);
       var title = json_contents["full-text-retrieval-response"]["dc:title"];
       console.log(title);
       var res = title.split(" ");
-      for (var i = 0; i < res.length; i++) {
-        if (commonWords.has(res[i]) == false){
-          if(myMap.has(res[i])){
-            var freq = myMap.get(res[i]);
-            myMap.set(res[i], freq + 1)
-          }
-          else{
-            myMap.set(res[i], 1)
-          }
-        }
-      }
+      // for (var i = 0; i < res.length; i++) {
+      //   if (commonWords.has(res[i]) == false){
+      //     if(myMap.has(res[i])){
+      //       var freq = myMap.get(res[i]);
+      //       myMap.set(res[i], freq + 1)
+      //     }
+      //     else{
+      //       myMap.set(res[i], 1)
+      //     }
+      //   }
+      // }
     });
   }
 }
