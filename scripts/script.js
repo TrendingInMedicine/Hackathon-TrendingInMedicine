@@ -15,7 +15,7 @@ function sendRequest(){
           query:  "query=srctitle(" + inFormated +")",
           apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
           count: "&count=200",
-          date : "+and+pub-date+aft+20170201",
+          date : "+and+pub-date+aft+20170101+and+pub-date+bef+20170131",
           output: "&httpAccept=application/json",
       }
       var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
@@ -26,10 +26,10 @@ function sendRequest(){
         dataType: "json",
 			  data: { url : jsonURL }
 			})
-			  .done(function( json_contents ) {
-          console.log(json_contents);
-          abstractGrabber(json_contents)
-			  });
+		  .done(function( json_contents ) {
+        console.log(json_contents);
+        abstractGrabber(json_contents)
+		  });
     }
     // grab each articles DOI and parse them
     // http://api.elsevier.com/content/article/[doi]?httpAccept=application/json - format to get abstract and other shit
