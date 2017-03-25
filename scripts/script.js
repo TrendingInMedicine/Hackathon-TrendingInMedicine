@@ -64,13 +64,17 @@ function abstractGrabber(data){
       //console.log(title);
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
-        if (commonWords.has(res[i]) == false){
+        res[i] = res[i].toLowerCase();
+        if (commonWords.has(res[i].toLowerCase()) == false){
           if(myMap.has(res[i])){
-            var freq = myMap.get(res[i]);
-            myMap.set(res[i], freq + 1)
+            var doiList = myMap.get(res[i]);
+            doiList.append(doi);
+            myMap.set(res[i], doiList)
           }
           else{
-            myMap.set(res[i], 1)
+            var doiList = [];
+            doiList.append(doi);
+            myMap.set(res[i], doiList)
           }
         }
       }
