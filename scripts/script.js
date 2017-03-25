@@ -68,12 +68,12 @@ function abstractGrabber(data){
         if (commonWords.has(res[i].toLowerCase()) == false){
           if(myMap.has(res[i])){
             var doiList = myMap.get(res[i]);
-            doiList.append(doi);
+            doiList.push(doi);
             myMap.set(res[i], doiList)
           }
           else{
             var doiList = [];
-            doiList.append(doi);
+            doiList.push(doi);
             myMap.set(res[i], doiList)
           }
         }
