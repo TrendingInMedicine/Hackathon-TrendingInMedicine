@@ -14,11 +14,11 @@ function sendRequest(){
       var inputData={
           query:  "query=srctitle(" + inFormated +")",
           apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
-          count: "&count=100",
-          organize : "pub-date+AFT+20170201",
+          count: "&count=200",
+          date : "+and+pub-date+aft+20170201",
           output: "&httpAccept=application/json",
       }
-      var jsonURL = searchURL + inputData.query + inputData.apiKey + inputData.count + inputData.organize + inputData.output;
+      var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
       console.log(jsonURL);
       $.ajax({
 			  method: "GET",
