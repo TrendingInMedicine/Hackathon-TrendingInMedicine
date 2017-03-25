@@ -15,7 +15,7 @@ function sendRequest(){
           query:  "query=srctitle(" + inFormated +")",
           apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
           count: "&count=100",
-          organize : "&sort=-date",
+          organize : "&sort=+date",
           output: "&httpAccept=application/json",
       }
       var jsonURL = searchURL + inputData.query + inputData.apiKey + inputData.organize + inputData.output;
