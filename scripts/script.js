@@ -15,7 +15,7 @@ function sendRequest(){
           query:  "query=srctitle(" + inFormated +")",
           apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
           count: "&count=200",
-          date : "+and+pub-date+aft+20170101+and+pub-date+bef+20170131",
+          date : "+and+pub-date+aft+20170301+and+pub-date+bef+20170331",
           output: "&httpAccept=application/json",
       }
       var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
@@ -55,6 +55,8 @@ function abstractGrabber(data){
     })
     .done(function( json_contents ) {
       console.log(json_contents);
+      var abstract = json_contents["full-text-retrieval-response"].originalText;
+
     });
   }
 }
