@@ -41,7 +41,7 @@ function sendRequest(){
 function abstractGrabber(data){
   array = data["search-results"].entry;
   var aSearchURL = "http://api.elsevier.com/content/article/"
-  var format = "httpAccept=application/json";
+  var format = "?httpAccept=application/json";
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
