@@ -46,5 +46,15 @@ function abstractGrabber(data){
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
     console.log(aSearchURL+doi+format);
+    abstractURL = aSearchURL + doi + format;
+    $.ajax({
+      method: "GET",
+      url: "worker.php",
+      dataType: "json",
+      data: { url : abstractURL }
+    })
+    .done(function( json_contents ) {
+      console.log(json_contents);
+    });
   }
 }
