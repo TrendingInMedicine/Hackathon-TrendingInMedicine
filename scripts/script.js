@@ -40,6 +40,8 @@ function sendRequest(){
         abstractGrabber(json_contents)
 		  });
     }
+    console.log("get here");
+    sortTheMap();
     // grab each articles DOI and parse them
     // http://api.elsevier.com/content/article/[doi]?httpAccept=application/json - format to get abstract and other shit
     // http://api.elsevier.com/content/article/doi/10.1016/j.ijsu.2005.03.007?httpAccept=application/json - example
@@ -85,16 +87,9 @@ function abstractGrabber(data){
             myMap.set(res[i], doiList)
           }
         }
-        if(myMap.length == 1933){
-          console.log(entry);
-        }
       }
     });
   }
-if(myMap.length === 1908)
-{
-  sortTheMap();
-}
 }
 function sortTheMap(){
   console.log("Done");
