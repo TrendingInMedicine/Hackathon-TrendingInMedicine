@@ -1,9 +1,12 @@
 var li = [];
+count = 0
 function display(){
 	$('body').on('click', 'a', function() {
+
 		 	var id = $(this).attr('id');
 			console.log(id);
-			if(id != "uneeded" || typeof id != 'undefined' || id != null){
+			if(id != "uneeded" || typeof id != 'undefined' || id != null|| count < 1){
+				count = count + 1;
 		  document.getElementById("output").innerHTML = "";
 		  var i= 0;
 	  	if(id == "mar2017"){
