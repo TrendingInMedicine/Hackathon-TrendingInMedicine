@@ -6,6 +6,9 @@ function display(){
 			if(id = "mar2017"){
 				for(var x of myMap)  {
 					i = i + 1;
+					if(i > 10){
+						break;
+					}
 					console.log(x);
 					var myDiv = document.createElement("DIV");
 					myDiv.innerHTML = x[0];
