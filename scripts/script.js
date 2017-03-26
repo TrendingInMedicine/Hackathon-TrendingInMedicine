@@ -84,6 +84,7 @@ function abstractGrabber(data){
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
         res[i] = res[i].toLowerCase();
+        res[i].replace(/['"]+/g, '');
         if (commonWords.has(res[i].toLowerCase()) == false && res[i] != "" && res[i].length > 3){
           if(myMap.has(res[i])){
             var doiList = myMap.get(res[i]);
