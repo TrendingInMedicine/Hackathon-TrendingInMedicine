@@ -26,13 +26,23 @@ function display(){
 						  data: { url : abstractURL }
 						})
 					  .done(function( json_contents ) {
-							console.log(json_contents);
+							var data = json_contents["full-text-retrieval-response"]["coredata"];
+							var title = data["dc:title"]
+							var url = data["link"][1]
+							var doi = data["prism:doi"]
+							var pn = data["prism:publicationName"]
+							var date = data["prism:coverDate"]
+							var desc = title + ". " + pn + " " + date + " " + doi;
+							var aLink  = document.createElement("A");
+							aLink.innerHTML = desc;
+
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
 					myDiv.setAttribute("id", "top" + i);
 					$("#result" + i).html(x[0]);
 					$('#output').append(myDiv);
+					$('#output').append(aLink);
 				}
 			}
 		});
