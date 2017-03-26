@@ -76,18 +76,13 @@ function abstractGrabber(data){
         if (commonWords.has(res[i].toLowerCase()) == false && res[i] != "" && res[i].length > 3){
           if(myMap.has(res[i])){
             var doiList = myMap.get(res[i]);
-            if (!doiList.indexOf(doi) >= 0) {
-            doiList.push(doi);
+            doiList.add(doi);
             myMap.set(res[i], doiList)
-          }
           }
           else{
-            var doiList = [];
-            if (!doiList.indexOf(doi) >= 0)
-            {
-            doiList.push(doi);
+            var doiList = new Set();
+            doiList.add(doi);
             myMap.set(res[i], doiList)
-          }
           }
         }
         if(myMap.length == 1933){
