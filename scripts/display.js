@@ -35,13 +35,13 @@ function display(){
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
 							console.log(desc);
-							aLink  = document.createElement("a");
-							var node = document.createTextNode(desc);
-							aLink.appendChild(node);
-							console.log(aLink);
-							myDiv.appendChild(aLink);
+							// aLink  = document.createElement("a");
+							// var node = document.createTextNode(desc);
+							// aLink.appendChild(node);
+							// console.log(aLink);
+							// myDiv.appendChild(aLink);
+							$("#result" + i).html(x[0] + "\n" + desc);
 					  });
-						$("#result" + i).html(x[0]);
 					}
 					myDiv.setAttribute("class", "boshal");
 
