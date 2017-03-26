@@ -76,9 +76,9 @@ function sendRequest(){
                  var boshal = res[i].toLowerCase();
                  boshal = boshal.replace(/['“]+/g, '');
                  //console.log(boshal);
-                 console.log(commonWords.has(boshal));
-              // if (commonWords.has(boshal) == false && boshal != "" && boshal.length > 3){
-
+                 //console.log(commonWords.has(boshal));
+               if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
+                      console.log("True");
             //     if(myMap.has(res[i])){
             //       var doiList = myMap.get(res[i]);
             //       doiList.push(doi);
@@ -101,7 +101,7 @@ function sendRequest(){
             //     myMap = new Map(a);
             //     console.log(myMap);
             //     break;
-            //  }
+            }
             }
     }
 
