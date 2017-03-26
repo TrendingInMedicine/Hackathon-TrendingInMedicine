@@ -64,8 +64,17 @@ function abstractGrabber(data){
       counter = counter + 1;
       gayshit = json_contents;
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
-      if (typeof title === 'undefined' || title === null) {
-        return;
+      while (typeof title === 'undefined' || title === null) {
+        $.ajax({
+          method: "GET",
+          url: "worker.php",
+          dataType: "json",
+          data: { url : abstractURL }
+        })
+        .done(function( otherjson ) {
+          json_contents = otherjson;
+          var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
+        }
       }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
