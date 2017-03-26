@@ -1,6 +1,6 @@
-var li;
+var li = [];
+li = new Set(li);
 function display(){
-	li = new Set();
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
     	console.log(id);
@@ -42,8 +42,8 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							li.add(desc);
-							if(li.size == 52){
+							li.push(desc);
+							if(li.length == 52){
 								addList();
 							}
 							// //console.log(desc);
@@ -74,7 +74,7 @@ function display(){
 
 function addList(){
 	int z = 0;
-	for (var i = 0; i < li.size; i++) {
+	for (var i = 0; i < li.length; i++) {
 		z = z +1;
 		var d = li[i];
 		var desDiv = document.createElement("a");
