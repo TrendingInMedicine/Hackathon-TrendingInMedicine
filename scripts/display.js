@@ -7,6 +7,7 @@ function display(){
 			if(id = "mar2017"){
 				for(var x of myMap)  {
 					i = i + 1;
+					console.log(i);
 					if(i > 10){
 						break;
 					}
@@ -18,6 +19,7 @@ function display(){
 					var aSearchURL = "http://api.elsevier.com/content/article/"
 					var format = "?httpAccept=application/json";
 					for (var y of x[1]) {
+
 				    var doi = y;
 				    var abstractURL = aSearchURL + doi + format;
 						//console.log(abstractURL);
