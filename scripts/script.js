@@ -67,6 +67,9 @@ function abstractGrabber(data){
       while (typeof title === 'undefined' || title === null) {
         console.log("Im here");
         i = i +1;
+        var entry = array[i];
+        var doi = "doi/" + entry["prism:doi"];
+        abstractURL = aSearchURL + doi + format;
         $.ajax({
           method: "GET",
           url: "worker.php",
