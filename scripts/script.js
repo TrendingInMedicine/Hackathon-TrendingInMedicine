@@ -13,9 +13,6 @@ var d = new Date();
 /*if(d.getDay == 0){ //Calls this weekly
   sendRequest();
 }*/
-$.when(sendRequest()).done(function() {
-  sortTheMap();
-});
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
       input = l[i];
@@ -30,7 +27,6 @@ function sendRequest(){
           output: "&httpAccept=application/json",
       }
       var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
-      //console.log(jsonURL);
       $.ajax({
 			  method: "GET",
 			  url: "worker.php",
@@ -38,17 +34,11 @@ function sendRequest(){
 			  data: { url : jsonURL }
 			})
 		  .done(function( json_contents ) {
-        //console.log(json_contents);
-        abstractGrabber(json_contents)
+        abstractGrabber(json_contents);
 		  });
     }
     console.log("get here");
     sortTheMap();
-    // grab each articles DOI and parse them
-    // http://api.elsevier.com/content/article/[doi]?httpAccept=application/json - format to get abstract and other shit
-    // http://api.elsevier.com/content/article/doi/10.1016/j.ijsu.2005.03.007?httpAccept=application/json - example
-    // to grab a json named obj's abstract do: obj["full-text-retrieval-response"].originalText
-    // its going to have a bunch of jargon so what you are going to have to do is remove any text uptil the text state's its DOI
 }
 function abstractGrabber(data){
   array = data["search-results"].entry;
@@ -73,6 +63,9 @@ function abstractGrabber(data){
         console.log("Error");
         return;
       }
+      if(myMap.size > 1900){
+        console.log(entry);
+      }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
         res[i] = res[i].toLowerCase();
@@ -87,6 +80,10 @@ function abstractGrabber(data){
             var doiList = new Set();
             doiList.add(doi);
             myMap.set(res[i], doiList)
+          }
+          if(myMap.size == 1908){
+            console.log("get here");
+            sortTheMap();
           }
         }
       }
