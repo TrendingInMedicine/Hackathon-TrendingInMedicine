@@ -20,14 +20,13 @@ function display(){
 		 			  myDiv.setAttribute("id", "top" + i);
 		  			myDiv.innerHTML = "#" + x[0];
 		    		$('#output').append(myDiv);
-		// 			var aSearchURL = "http://api.elsevier.com/content/article/"
-		// 			var format = "?httpAccept=application/json";
-		// 			var j = 0;
-		// 			for (var y of x[1]) {
-		//
-		// 		    var doi = y;
-		// 		    var abstractURL = aSearchURL + doi + format;
-		// 				//console.log(abstractURL);
+		  			var aSearchURL = "http://api.elsevier.com/content/article/"
+		  			var format = "?httpAccept=application/json";
+		  			//var j = 0;
+		    			for (var y of x[1]) {
+		   		    var doi = y;
+		   		    var abstractURL = aSearchURL + doi + format;
+		   				console.log(abstractURL);
 		// 				$.ajax({
 		// 				  method: "GET",
 		// 				  url: "worker.php",
@@ -70,6 +69,7 @@ function display(){
 		// 		}
 		// 	}
 		// });
+	}
 	}
 	}
 }
