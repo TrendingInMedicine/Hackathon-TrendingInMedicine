@@ -1,5 +1,6 @@
-var li = new Set();
+var li;
 function display(){
+	li = new Set();
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
     	console.log(id);
