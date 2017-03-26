@@ -103,8 +103,8 @@ function sendRequest(){
             //     myMap = new Map(a);
             //     console.log(myMap);
             //     break;
-      }
-}
+      //}
+//}
   });
   }
   }
