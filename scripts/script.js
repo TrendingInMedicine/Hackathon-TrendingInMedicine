@@ -56,7 +56,7 @@ function sendRequest(){
 			})
 		  .done(function( json_contents ) {
         console.log(json_contents);
-        //abstractGrabber(json_contents)
+        abstractGrabber(json_contents)
 		  });
     }
 
