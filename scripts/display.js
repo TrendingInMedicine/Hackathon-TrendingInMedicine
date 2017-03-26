@@ -51,18 +51,15 @@ function display(){
 		// 					// if(li.length == 52){
 		// 					// 	addList();
 		// 					// }
-		// 					//console.log(desc);
-		//
-		// 					var desDiv = document.createElement("a");
-		// 					desDiv.setAttribute("class", "snow")
-		// 					var br = document.createElement("br");
-		// 					desDiv.innerHTML = desc;
-		// 					desDiv.href = url;
-		// 					console.log("#top" + j);
-		// 					var top = "#top" + j;
-		// 					console.log(top);
-		// 					$(top).append(br);
-		// 					$(top).append(desDiv);
+							 var desDiv = document.createElement("a");
+		  					desDiv.setAttribute("class", "snow")
+		  					var br = document.createElement("br");
+		  					desDiv.innerHTML = desc;
+		  					desDiv.href = url;
+		  					var top = "#top" + i;
+		  					console.log(top);
+		  					$(top).append(br);
+		  					$(top).append(desDiv);
 		//
 		// 					$("#result" + i).html(x[0]);
 		// 			  });
