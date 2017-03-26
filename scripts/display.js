@@ -35,10 +35,11 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
+							console.log(desc);
 							aLink  = document.createElement("a");
-
 							var node = document.createTextNode(desc);
 							aLink.appendChild(node);
+							console.log(aLink);
 							myDiv.appendChild(aLink);
 					  });
 					}
