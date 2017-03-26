@@ -100,6 +100,5 @@ function abstractGrabber(data){
           break;
         }
       }
-    });
   }
 }
