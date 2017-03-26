@@ -57,7 +57,7 @@ function sendRequest(){
     // to grab a json named obj's abstract do: obj["full-text-retrieval-response"].originalText
     // its going to have a bunch of jargon so what you are going to have to do is remove any text uptil the text state's its DOI
 }
-
+“comparison
 function abstractGrabber(data){
   array = data["search-results"].entry;
   var aSearchURL = "http://api.elsevier.com/content/article/"
@@ -84,8 +84,8 @@ function abstractGrabber(data){
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
         res[i] = res[i].toLowerCase();
-        res[i].replace(/['"]+/g, '');
-        if (commonWords.has(res[i].toLowerCase().replace(/['"]+/g, '')) == false && res[i] != "" && res[i].length > 3){
+        res[i].replace(/['“]+/g, '');
+        if (commonWords.has(res[i].toLowerCase()) == false && res[i] != "" && res[i].length > 3){
           if(myMap.has(res[i])){
             var doiList = myMap.get(res[i]);
             doiList.push(doi);
