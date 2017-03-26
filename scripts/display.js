@@ -3,6 +3,7 @@ var links = mylinks;
 var lengths = [];
 count = 0
 var j = 1;
+var snowshal = 0;
 function display(){
 	$('body').on('click', 'a', function() {
 
@@ -22,21 +23,21 @@ function display(){
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + m[0];
 					$('#output').append(myDiv);
-					for(var index = 0; index < m[1].size; index++)
+					for(var index = snowshal; index < snowshal+ m[1].size; index++)
 					{
-
-				var desDiv = document.createElement("a");
-				desDiv.setAttribute("class", "snow")
-				var br = document.createElement("br");
-				desDiv.innerHTML = myLi[index];
-				desDiv.href = links[index];
-				var top = "#top" + i;
-				console.log(top);
-				$(top).append(br);
-				$(top).append(desDiv);
-			}
-				i = i + 1;
-			}
+						snowshal = snowshal + 1;
+						var desDiv = document.createElement("a");
+						desDiv.setAttribute("class", "snow")
+						var br = document.createElement("br");
+						desDiv.innerHTML = myLi[index];
+						desDiv.href = links[index];
+						var top = "#top" + i;
+						console.log(top);
+						$(top).append(br);
+						$(top).append(desDiv);
+					}
+					i = i + 1;
+				}
 				// for(var x of myMap)  {
 				// 	var temp_json = "";
 				// 	j = 1;
@@ -103,8 +104,8 @@ function display(){
 				// 		});
 				// 	}
 				//
-}
-			}		// //	j = j + 1;
+			}
+		}		// //	j = j + 1;
 	});
 	count = 0;
 }
