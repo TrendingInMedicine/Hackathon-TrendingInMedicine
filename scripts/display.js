@@ -13,6 +13,7 @@ function display(){
 					console.log(x);
 					var aSearchURL = "http://api.elsevier.com/content/article/"
 					var format = "?httpAccept=application/json";
+					var aLink;
 					var myDiv = document.createElement("DIV");
 					myDiv.innerHTML = "#" + x[0];
 					for (var y of x[1]) {
@@ -33,7 +34,7 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							var aLink  = document.createElement("A");
+							aLink  = document.createElement("A");
 							aLink.innerHTML = desc;
 
 					  });
