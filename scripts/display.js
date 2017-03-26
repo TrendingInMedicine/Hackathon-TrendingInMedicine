@@ -72,16 +72,14 @@ function display(){
 }
 
 function addList(){
-	int z = 0;
 	for (var i = 0; i < li.length; i++) {
-		z = z +1;
 		var d = li[i];
 		var desDiv = document.createElement("a");
 		var br = document.createElement("br");
 		desDiv.innerHTML = d;
-
-		console.log("#top" + z);
-		var top = "#top" + z;
+		
+		console.log("#top" + j);
+		var top = "#top" + j;
 		console.log(top);
 		$(top).append(br);
 		$(top).append(desDiv);
