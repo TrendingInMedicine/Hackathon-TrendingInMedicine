@@ -62,15 +62,15 @@ function sendRequest(){
         console.log(temp_json);
         array = temp_json["search-results"].entry;
         console.log(array);
-        // for (var i = 0; i < array.length; i++) {
-        //   var entry = array[i];
-        //   var doi = "doi/" + entry["prism:doi"];
-        //     var title = entry["dc:title"];
-        //     //console.log(title);
-        //     if (typeof title === 'undefined' || title === null) {
-        //       console.log("Error");
-        //       return;
-        //     }
+        for (var i = 0; i < array.length; i++) {
+          var entry = array[i];
+          var doi = "doi/" + entry["prism:doi"];
+            var title = entry["dc:title"];
+            console.log(title);
+            if (typeof title === 'undefined' || title === null) {
+              console.log("Error");
+              return;
+            }
             // var res = title.split(" ");
             // //console.log(res);
             //  for (var i = 0; i < res.length; i++) {
