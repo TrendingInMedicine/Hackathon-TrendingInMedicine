@@ -64,6 +64,10 @@ function abstractGrabber(data){
       counter = counter + 1;
       gayshit = json_contents;
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
+      if (typeof title === 'undefined' || title === null) {
+        console.log("Error");
+        return;
+      }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
         res[i] = res[i].toLowerCase();
