@@ -76,13 +76,19 @@ function abstractGrabber(data){
         if (commonWords.has(res[i].toLowerCase()) == false && res[i] != "" && res[i].length > 3){
           if(myMap.has(res[i])){
             var doiList = myMap.get(res[i]);
+            if(!doiList.has(doi))
+            {
             doiList.push(doi);
             myMap.set(res[i], doiList)
           }
+          }
           else{
             var doiList = [];
+            if(!doiList.has(doi))
+            {
             doiList.push(doi);
             myMap.set(res[i], doiList)
+          }
           }
         }
         if(myMap.length == 1933){
