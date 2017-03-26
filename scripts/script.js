@@ -15,7 +15,7 @@ function sendRequest(){
     for (var i = 0; i < l.length; i++) {
       input = l[i];
       var inFormated = input.split(' ').join('+');
-      console.log(inFormated);
+      //console.log(inFormated);
       var searchURL = "https://api.elsevier.com/content/search/scidir?"
       var inputData={
           query:  "query=srctitle(" + inFormated +")",
@@ -60,9 +60,10 @@ function abstractGrabber(data){
       data: { url : abstractURL }
     })
     .done(function( json_contents ) {
-      if (json_contents["full-text-retrieval-response"]["coredata"].hasOwnProperty["dc:title"] == false)
+      if (json_contents["full-text-retrieval-response"]["coredata"].hasOwnProperty["dc:title"] == false){
         console.log("Im stupid");
         return;
+      }
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       gayshit = json_contents;
       var res = title.split(" ");
