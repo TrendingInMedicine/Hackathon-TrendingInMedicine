@@ -65,6 +65,7 @@ function abstractGrabber(data){
       gayshit = json_contents;
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       while (typeof title === 'undefined' || title === null) {
+        console.log("Im here");
         i = i +1;
         $.ajax({
           method: "GET",
