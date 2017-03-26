@@ -48,7 +48,7 @@ function sendRequest(){
 			})
 		  .done(function( json_contents ) {
         console.log(json_contents);
-        //abstractGrabber(json_contents)
+        abstractGrabber(json_contents)
 		  });
     }
 
@@ -60,13 +60,11 @@ function sendRequest(){
 }
 function abstractGrabber(data){
   array = data["search-results"].entry;
-  var aSearchURL = "http://api.elsevier.com/content/article/"
-  var format = "?httpAccept=application/json";
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
       counter = counter + 1;
-      var title = data["full-text-retrieval-response"]["coredata"]["dc:title"];
+      var title = entry["dc:title"];
       if (typeof title === 'undefined' || title === null) {
         console.log("Error");
         return;
@@ -87,18 +85,18 @@ function abstractGrabber(data){
             myMap.set(res[i], doiList)
           }
         }
-        if(myMap.size == 1908){
-          console.log("Done");
-          a = [];
-          for(var x of myMap)
-            a.push(x);
-          a.sort(function(x, y) {
-            return y[1].length - x[1].length;
-          });
-          myMap = new Map(a);
-          console.log(myMap);
-          break;
-        }
+        // if(myMap.size == 1908){
+        //   console.log("Done");
+        //   a = [];
+        //   for(var x of myMap)
+        //     a.push(x);
+        //   a.sort(function(x, y) {
+        //     return y[1].length - x[1].length;
+        //   });
+        //   myMap = new Map(a);
+        //   console.log(myMap);
+        //   break;
+        // }
       }
   }
 }
