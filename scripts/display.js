@@ -23,7 +23,7 @@ function display(){
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + m[0];
 					$('#output').append(myDiv);
-					for(var index = snowshal; index < snowshal+ m[1].size; index++)
+					for(var index = snowshal; index < (snowshal+ m[1].size); index++)
 					{
 						snowshal = snowshal + 1;
 						var desDiv = document.createElement("a");
