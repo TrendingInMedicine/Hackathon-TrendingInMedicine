@@ -101,8 +101,8 @@ function sendRequest(){
             //     myMap = new Map(a);
             //     console.log(myMap);
             //     break;
-            }
-            }
+            //}
+            //}
     }
 
     // grab each articles DOI and parse them
