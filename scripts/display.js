@@ -58,7 +58,7 @@ function display(){
 		  					var br = document.createElement("br");
 		  					desDiv.innerHTML = desc;
 		  					desDiv.href = url;
-		  					var top = "#top" + i;
+		  					var top = "#top" + j;
 		  					console.log(top);
 		  					$(top).append(br);
 		  					$(top).append(desDiv);
