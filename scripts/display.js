@@ -4,6 +4,8 @@ function display(){
 	$('body').on('click', 'a', function() {
 		 	var id = $(this).attr('id');
 			console.log(id);
+			if(id == "uneeded")
+				return;
 		  document.getElementById("output").innerHTML = "";
 		  var i= 0;
 	  	if(id = "mar2017"){
