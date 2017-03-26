@@ -61,21 +61,22 @@ function sendRequest(){
         temp_json = json_contents;
         console.log(temp_json);
         array = temp_json["search-results"].entry;
-        for (var i = 0; i < array.length; i++) {
-          var entry = array[i];
-          var doi = "doi/" + entry["prism:doi"];
-            var title = entry["dc:title"];
-            //console.log(title);
-            if (typeof title === 'undefined' || title === null) {
-              console.log("Error");
-              return;
-            }
-            var res = title.split(" ");
-            //console.log(res);
-             for (var i = 0; i < res.length; i++) {
-                 var boshal = res[i].toLowerCase();
-                 boshal = boshal.replace(/['“]+/g, '');
-                 console.log(boshal);
+        console.log(array);
+        // for (var i = 0; i < array.length; i++) {
+        //   var entry = array[i];
+        //   var doi = "doi/" + entry["prism:doi"];
+        //     var title = entry["dc:title"];
+        //     //console.log(title);
+        //     if (typeof title === 'undefined' || title === null) {
+        //       console.log("Error");
+        //       return;
+        //     }
+            // var res = title.split(" ");
+            // //console.log(res);
+            //  for (var i = 0; i < res.length; i++) {
+            //      var boshal = res[i].toLowerCase();
+            //      boshal = boshal.replace(/['“]+/g, '');
+            //      console.log(boshal);
                  //console.log(commonWords.has(boshal));
               //  if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
               //       //  console.log("True");
@@ -103,14 +104,14 @@ function sendRequest(){
             //     break;
             //}
             //}
-    }
+    //}
 
     // grab each articles DOI and parse them
     // http://api.elsevier.com/content/article/[doi]?httpAccept=application/json - format to get abstract and other shit
     // http://api.elsevier.com/content/article/doi/10.1016/j.ijsu.2005.03.007?httpAccept=application/json - example
     // to grab a json named obj's abstract do: obj["full-text-retrieval-response"].originalText
     // its going to have a bunch of jargon so what you are going to have to do is remove any text uptil the text state's its DOI
-  }
+  //}
   });
   }
   }
