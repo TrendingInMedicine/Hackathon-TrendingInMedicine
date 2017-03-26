@@ -27,6 +27,7 @@ function display(){
 					var format = "?httpAccept=application/json";
 					//var j = 0;
 					for (var y of x[1]) {
+						console.log(y.size);
 						var doi = y;
 						var abstractURL = aSearchURL + doi + format;
 						//console.log(abstractURL);
@@ -77,8 +78,6 @@ function display(){
 				//	j = j + 1;
 
 				}
-				console.log(j);
-				j = j + 1;
 			}
 		}
 	});
