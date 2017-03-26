@@ -73,25 +73,25 @@ function sendRequest(){
             }
 
             var res = title.split(" ");
-            //console.log(res);
-              for (var i = 0; i < res.length; i++) {
-                 var boshal = res[i].toLowerCase();
-                 boshal = boshal.replace(/['“]+/g, '');
+            console.log(res);
+            //  for (var i = 0; i < res.length; i++) {
+              //   var boshal = res[i].toLowerCase();
+                // boshal = boshal.replace(/['“]+/g, '');
                  //console.log(boshal);
                  //console.log(commonWords.has(boshal));
-                if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
+                //if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
               //       //  console.log("True");
-                if(myMap.has(res[i])){
-                   var doiList = myMap.get(res[i]);
-                   doiList.push(doi);
-                   myMap.set(res[i], doiList)
+                //if(myMap.has(res[i])){
+                  // var doiList = myMap.get(res[i]);
+                  // doiList.push(doi);
+                  // myMap.set(res[i], doiList)
                 }
-                else{
-                  var doiList = [];
-                   doiList.push(doi);
-                   myMap.set(res[i], doiList)
-              }
-              }
+                //else{
+                  //var doiList = [];
+                   //doiList.push(doi);
+                   //myMap.set(res[i], doiList)
+              //}
+            //  }
             //   if(myMap.size == 1908){
             //     console.log("Done");
             //     a = [];
