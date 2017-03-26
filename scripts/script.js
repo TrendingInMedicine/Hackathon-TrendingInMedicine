@@ -15,14 +15,6 @@ for (i of stringMap)
 
 console.log(commonWords);
 
-console.log("Done");
-a = [];
-for(var x of myMap)
-  a.push(x);
-a.sort(function(x, y) {
-  return y[1].size - x[1].size;
-});
-myMap = new Map(a);
 console.log(myMap);
 
 
