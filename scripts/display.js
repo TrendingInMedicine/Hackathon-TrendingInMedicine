@@ -41,10 +41,10 @@ function display(){
 							console.log(aLink);
 							myDiv.appendChild(aLink);
 					  });
+						$("#result" + i).html(x[0]);
 					}
 					myDiv.setAttribute("class", "boshal");
 
-					$("#result" + i).html(x[0]);
 					$('#output').append(myDiv);
 				}
 			}
