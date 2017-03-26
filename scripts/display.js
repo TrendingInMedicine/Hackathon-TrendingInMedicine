@@ -35,9 +35,11 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							aLink  = document.createElement("A");
-							aLink.innerHTML = desc;
-							$('#top' + i).append(desc);
+							aLink  = document.createElement("a");
+
+							var node = document.createTextNode(desc);
+							aLink.appendChild(node);
+							myDiv.appendChild(aLink);
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
