@@ -35,7 +35,7 @@ sendRequest();
 
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
-      var temp_json;
+      var temp_json = "";
       input = l[i];
       var inFormated = input.split(' ').join('+');
       //console.log(inFormated);
