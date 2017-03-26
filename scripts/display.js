@@ -73,10 +73,12 @@ function display(){
 							// });
 						});
 					}
-					console.log(j);
-					j = j + 1;
+
+				//	j = j + 1;
 
 				}
+				console.log(j);
+				j = j + 1;
 			}
 		}
 	});
