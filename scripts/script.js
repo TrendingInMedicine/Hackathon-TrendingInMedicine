@@ -36,6 +36,7 @@ function sendRequest(){
 		  .done(function( json_contents ) {
         //console.log(json_contents);
         abstractGrabber(json_contents)
+        console.log("Done");
 		  });
     }
     // grab each articles DOI and parse them
