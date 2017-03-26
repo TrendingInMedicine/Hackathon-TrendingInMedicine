@@ -9,22 +9,22 @@ var commonWords = new Set(['a', 'about', 'above', 'after', 'again', 'against', '
 console.log(commonWords);
 var myMap = new Map();
 
-// for (i of stringMap)
-// {
-//   myMap.set(i[0], new Set(i[1]));
-// }
+for (i of stringMap)
+{
+  myMap.set(i[0], new Set(i[1]));
+}
 //
 // console.log(commonWords);
 //
-// console.log("Done");
-// a = [];
-// for(var x of myMap)
-//   a.push(x);
-// a.sort(function(x, y) {
-//   return y[1].size - x[1].size;
-// });
-// myMap = new Map(a);
-// console.log(myMap);
+console.log("Done");
+a = [];
+for(var x of myMap)
+  a.push(x);
+a.sort(function(x, y) {
+  return y[1].size - x[1].size;
+});
+myMap = new Map(a);
+console.log(myMap);
 
 
 
@@ -32,7 +32,7 @@ var myMap = new Map();
 /*if(d.getDay == 0){ //Calls this weekly
 sendRequest();
 }*/
-sendRequest();
+//sendRequest();
 var temp_json = "";
 function sendRequest(){
   for (var i = 0; i < l.length; i++) {
@@ -99,15 +99,6 @@ function sendRequest(){
       //}
     });
   }
-      console.log("Done");
-      a = [];
-      for(var x of myMap)
-        a.push(x);
-      a.sort(function(x, y) {
-        return y[1].length - x[1].length;
-      });
-      myMap = new Map(a);
-      console.log(myMap);
 }
 //   var boshal = res[i].toLowerCase();
 // boshal = boshal.replace(/['“]+/g, '');
