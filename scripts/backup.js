@@ -52,8 +52,9 @@ function display(){
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
 							console.log(desc);
-							desc = desc.replace(/['"]+/g, '');
+							desc = desc.replace(/['”]+/g, '');
 							desc = desc.replace(/['“]+/g, '');
+							desc = desc.replace(/['"]+/g, '');
 							li.push(desc);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
