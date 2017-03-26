@@ -62,8 +62,8 @@ function sendRequest(){
         console.log(temp_json);
         array = temp_json["search-results"].entry;
         console.log(array);
-        for (var i = 0; i < array.length; i++) {
-          var entry = array[i];
+        for (var j = 0; j < array.length; j++) {
+          var entry = array[j];
           var doi = "doi/" + entry["prism:doi"];
             var title = entry["dc:title"];
             console.log(title);
@@ -74,21 +74,22 @@ function sendRequest(){
 
             var res = title.split(" ");
             console.log(res);
-             for (var i = 0; i < res.length; i++) {
-                   var boshal = res[i].toLowerCase();
+             for (var k = 0; k < res.length; k++) {
+                  console.log(k);
+                   var boshal = res[k].toLowerCase();
                    boshal = boshal.replace(/['“]+/g, '');
                    //console.log(boshal);
                    if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
 
-                     if(myMap.has(res[i])){
-                       var doiList = myMap.get(res[i]);
+                     if(myMap.has(boshal)){
+                       var doiList = myMap.get(boshal);
                        doiList.push(doi);
-                       myMap.set(res[i], doiList)
+                       myMap.set(boshal, doiList)
                      }
                      else{
                        var doiList = [];
                       doiList.push(doi);
-                      myMap.set(res[i], doiList)
+                      myMap.set(boshal, doiList)
                    }
                    }
             }
