@@ -37,7 +37,7 @@ function display(){
 							var desc = title + ". " + pn + " " + date + " " + doi;
 							aLink  = document.createElement("A");
 							aLink.innerHTML = desc;
-							$('#top' + i).append(aLink);
+							$('#top' + i).append(desc);
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
