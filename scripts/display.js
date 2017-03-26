@@ -10,8 +10,8 @@ function display(){
 		  	for(var x of myMap)  {
 		   			i = i + 1;
 		   			console.log(i);
-		// 			if(i > 10)
-		// 				break;
+					if(i > 10)
+						break;
 		// 			console.log(x);
 		// 			var myDiv = document.createElement("DIV");
 		// 			myDiv.setAttribute("id", "top" + i);
