@@ -106,6 +106,7 @@ function sendRequest(){
     // http://api.elsevier.com/content/article/doi/10.1016/j.ijsu.2005.03.007?httpAccept=application/json - example
     // to grab a json named obj's abstract do: obj["full-text-retrieval-response"].originalText
     // its going to have a bunch of jargon so what you are going to have to do is remove any text uptil the text state's its DOI
+});
 }
 function abstractGrabber(data){
   console.log(data);
