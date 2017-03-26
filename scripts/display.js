@@ -1,4 +1,5 @@
 var li = myLi;
+var links = mylinks;
 var lengths = [];
 count = 0
 var j = 1;
@@ -24,11 +25,11 @@ function display(){
 					for(var index = 0; index < m[1].size; index++)
 					{
 
-				var desDiv = document.createElement("p");
+				var desDiv = document.createElement("a");
 				desDiv.setAttribute("class", "snow")
 				var br = document.createElement("br");
 				desDiv.innerHTML = myLi[index];
-				//desDiv.href = url;
+				desDiv.href = links[index];
 				var top = "#top" + i;
 				console.log(top);
 				$(top).append(br);
