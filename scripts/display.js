@@ -10,6 +10,7 @@ function display(){
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
 					$("#result" + i).html(x[0]);
+					$('#output').append(myDiv);
 				}
 			}
 		});
