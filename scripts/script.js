@@ -59,7 +59,7 @@ function sendRequest(){
 		  .done(function( json_contents ) {
         temp_json = json_contents;
         console.log(temp_json);
-        abstractGrabber(temp_json)
+        //abstractGrabber(temp_json)
 		  });
     }
 
