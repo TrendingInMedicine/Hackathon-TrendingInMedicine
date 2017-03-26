@@ -78,7 +78,7 @@ function abstractGrabber(data){
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       if (typeof title === 'undefined' || title === null) {
         console.log("Im stupid");
-        return;
+        continue;
       }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
