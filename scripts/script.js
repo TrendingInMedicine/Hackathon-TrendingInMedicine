@@ -66,8 +66,12 @@ function abstractGrabber(data){
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       while (typeof title === 'undefined' || title === null) {
         console.log("Im here");
-        i = i +1;
+        i = i + 1;
         var entry = array[i];
+        if(entry === 'undefined'){
+          console.log("xd");
+          return;
+        }
         var doi = "doi/" + entry["prism:doi"];
         abstractURL = aSearchURL + doi + format;
         $.ajax({
