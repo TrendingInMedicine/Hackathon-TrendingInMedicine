@@ -101,15 +101,16 @@ function abstractGrabber(data){
       }
     });
   }
-  function sortTheMap(){
-    console.log("Done");
-    a = [];
-    for(var x of myMap)
-      a.push(x);
-    a.sort(function(x, y) {
-      return y[1].length - x[1].length;
-    });
-    myMap = new Map(a);
-    console.log(myMap);
-  }
+
+}
+function sortTheMap(){
+  console.log("Done");
+  a = [];
+  for(var x of myMap)
+    a.push(x);
+  a.sort(function(x, y) {
+    return y[1].length - x[1].length;
+  });
+  myMap = new Map(a);
+  console.log(myMap);
 }
