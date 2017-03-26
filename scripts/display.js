@@ -11,7 +11,8 @@ function display(){
 					}
 					console.log(x);
 					var myDiv = document.createElement("DIV");
-					myDiv.innerHTML = x[0];
+					myDiv.innerHTML = "#" + x[0];
+					myDiv.setAttribute("class", "boshal");
 					myDiv.setAttribute("id", "top" + i);
 					$("#result" + i).html(x[0]);
 					$('#output').append(myDiv);
