@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>#TrendingInMedicine</title>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
   <!-- CSS  -->
   <link href="css/boshal.css" type = "text/css" rel = "stylesheet" media = "sceen,projection"/>
@@ -11,9 +12,9 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
+<body bgcolor = "#dddfd4" onclick = "display()">
 
-  <nav class="light-blue lighten-1" role="navigation">
+  <nav class="custom-yellow" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.html" class="brand-logo center">#TiM</a>
     </div>
@@ -22,7 +23,7 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text left">Surgery</h1>
+      <h1 class="header center left" id = "ccblue">Surgery</h1>
       <div class="row center"></div>
       <br><br>
     </div>
@@ -53,8 +54,26 @@
         </div>
 
         <div class = "col s12 m4">
-          <a class = "dropdown-button btn" href = "#" data-activates="dropdown1">2017</a>
-            <ul id='dropdown1' class='dropdown-content'>
+          <a class = "dropdown-button btn" href = "#" data-activates="dropdown2">2017</a>
+            <ul id='dropdown2' class='dropdown-content'>
+              <li><a href="#!" id = "jan2017">Januray</a></li>
+              <li><a href="#!" id = "feb2017">Febuary</a></li>
+              <li><a href="#!" id = "mar2017">March</a></li>
+              <li><a href="#!" id = "apr2017">April</a></li>
+              <li><a href="#!" id = "may2017">May</a></li>
+              <li><a href="#!" id = "jun2017">June</a></li>
+              <li><a href="#!" id = "jul2017">July</a></li>
+              <li><a href="#!" id = "aug2017">August</a></li>
+              <li><a href="#!" id = "sep2017">September</a></li>
+              <li><a href="#!" id = "oct2017">October</a></li>
+              <li><a href="#!" id = "nov2017">November</a></li>
+              <li><a href="#!" id = "dec2017">December</a></li>
+            </ul>
+        </div>
+
+        <div class = "col s12 m4">
+          <a class = "dropdown-button btn" href = "#" data-activates="dropdown3">2016</a>
+            <ul id='dropdown3' class='dropdown-content'>
               <li><a href="#!">Januray</a></li>
               <li><a href="#!">Febuary</a></li>
               <li><a href="#!">March</a></li>
@@ -70,23 +89,7 @@
             </ul>
         </div>
 
-        <div class = "col s12 m4">
-          <a class = "dropdown-button btn" href = "#" data-activates="dropdown1">2016</a>
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#!">Januray</a></li>
-              <li><a href="#!">Febuary</a></li>
-              <li><a href="#!">March</a></li>
-              <li><a href="#!">April</a></li>
-              <li><a href="#!">May</a></li>
-              <li><a href="#!">June</a></li>
-              <li><a href="#!">July</a></li>
-              <li><a href="#!">August</a></li>
-              <li><a href="#!">September</a></li>
-              <li><a href="#!">October</a></li>
-              <li><a href="#!">November</a></li>
-              <li><a href="#!">December</a></li>
-            </ul>
-        </div>
+
       </div>
     </div>
   </div>
@@ -94,7 +97,7 @@
 
 
 
-  <footer id = "snowshalbeddy" class="page-footer orange">
+  <footer id = "snowshalbeddy" class="page-footer custom-yellow">
     <div class="container">
       <div class="row">
         <div class="col l s12">
@@ -106,16 +109,16 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Ashwin Pathi, Alex Marwaha, Anjam Alam, & Ankur Mishra using Materialize css</a>
+      Made by <a class="custom-yellow text-lighten-3" href="http://materializecss.com">Ashwin Pathi, Alex Marwaha, Anjam Alam, & Ankur Mishra using Materialize css</a>
       </div>
     </div>
   </footer>
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/display.js"></script>
 
   </body>
 </html>
