@@ -91,7 +91,7 @@ function abstractGrabber(data){
       }
     });
   }
-if(myMap.length === 1910)
+if(myMap.length === 1908)
 {
   sortTheMap();
 }
