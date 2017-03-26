@@ -10,10 +10,20 @@ var myMap = new Map();
 
 for (i of stringMap)
 {
-  myMap.set(i[0], i[1]);
+  myMap.set(i[0], Set(i[1]);
 }
 
 console.log(commonWords);
+console.log("Done");
+a = [];
+for(var x of myMap)
+  a.push(x);
+a.sort(function(x, y) {
+  return y[1].size - x[1].size;
+});
+myMap = new Map(a);
+console.log(myMap);
+break;
 
 // var d = new Date();
 /*if(d.getDay == 0){ //Calls this weekly
