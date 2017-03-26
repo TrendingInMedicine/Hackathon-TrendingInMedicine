@@ -85,7 +85,7 @@ function abstractGrabber(data){
             myMap.set(res[i], doiList)
           }
         }
-        if(myMap.size == 1933){
+        if(myMap.size == 1908){
           console.log(entry);
         }
       }
