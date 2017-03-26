@@ -39,8 +39,9 @@ function display(){
 							var desDiv = document.createElement("a");
 							var br = document.createElement("br");
 							desDiv.innerHTML = desc;
-							$('#top' +i).append(br);
-							$('#top' +i).append(desDiv);
+							console.log("#top" + i);
+							$("#top" +i).append(br);
+							$("#top" +i).append(desDiv);
 							// aLink  = document.createElement("a");
 							// var node = document.createTextNode(desc);
 							// aLink.appendChild(node);
