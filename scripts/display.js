@@ -18,6 +18,7 @@ function display(){
 					for (var y in x[1]) {
 				    var doi = y;
 				    var abstractURL = aSearchURL + doi + format;
+						console.log(abstractURL);
 						$.ajax({
 						  method: "GET",
 						  url: "worker.php",
