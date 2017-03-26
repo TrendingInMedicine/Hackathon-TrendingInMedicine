@@ -1,4 +1,4 @@
-var li = [];
+var li = new Set();
 function display(){
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
@@ -41,8 +41,8 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							li.push(desc);
-							if(li.length == j){
+							li.add(desc);
+							if(li.size == 52){
 								addList();
 							}
 							// //console.log(desc);
@@ -72,14 +72,16 @@ function display(){
 }
 
 function addList(){
-	for (var i = 0; i < li.length; i++) {
+	int z = 0;
+	for (var i = 0; i < li.size; i++) {
+		z = z +1;
 		var d = li[i];
 		var desDiv = document.createElement("a");
 		var br = document.createElement("br");
 		desDiv.innerHTML = d;
 
-		console.log("#top" + j);
-		var top = "#top" + j;
+		console.log("#top" + z);
+		var top = "#top" + z;
 		console.log(top);
 		$(top).append(br);
 		$(top).append(desDiv);
