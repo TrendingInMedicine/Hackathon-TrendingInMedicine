@@ -49,6 +49,7 @@ function display(){
 							console.log(desc);
 
 							var desDiv = document.createElement("a");
+							desDiv.setAttribute("class", "snow")
 							var br = document.createElement("br");
 							desDiv.innerHTML = desc;
 
