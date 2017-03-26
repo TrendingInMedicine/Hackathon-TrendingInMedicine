@@ -70,6 +70,7 @@ function sendRequest(){
               return;
             }
             var res = title.split(" ");
+            console.log(res);
             // for (var i = 0; i < res.length; i++) {
             //   res[i] = res[i].toLowerCase();
             //   res[i].replace(/['“]+/g, '');
