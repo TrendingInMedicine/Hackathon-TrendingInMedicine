@@ -36,9 +36,10 @@ function display(){
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
 							console.log(desc);
-
-							var desDiv = document.createElement("DIV");
+							var desDiv = document.createElement("a");
+							var br = document.createElement("br");
 							desDiv.innerHTML = desc;
+							$('#top' +i).append(br);
 							$('#top' +i).append(desDiv);
 							// aLink  = document.createElement("a");
 							// var node = document.createTextNode(desc);
