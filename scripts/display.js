@@ -1,4 +1,5 @@
 var li = [];
+var wordMap = new Map();
 function display(){
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
