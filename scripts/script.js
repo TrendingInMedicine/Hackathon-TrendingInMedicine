@@ -74,8 +74,9 @@ function sendRequest(){
             //console.log(res);
              for (var i = 0; i < res.length; i++) {
                  var boshal = res[i].toLowerCase();
-                 boshal.replace(/['“]+/g, '');
-               if (commonWords.has(boshal) == false && boshal != "" && boshal.length > 3){
+                 boshal = boshal.replace(/['“]+/g, '');
+                 console.log(boshal);
+              // if (commonWords.has(boshal) == false && boshal != "" && boshal.length > 3){
 
             //     if(myMap.has(res[i])){
             //       var doiList = myMap.get(res[i]);
@@ -99,7 +100,7 @@ function sendRequest(){
             //     myMap = new Map(a);
             //     console.log(myMap);
             //     break;
-              }
+            //  }
             }
     }
 
