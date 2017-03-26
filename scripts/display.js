@@ -14,6 +14,8 @@ function display(){
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + x[0];
+					var aSearchURL = "http://api.elsevier.com/content/article/"
+					var format = "?httpAccept=application/json";
 					for (var y of x[1]) {
 				    var doi = y;
 				    var abstractURL = aSearchURL + doi + format;
