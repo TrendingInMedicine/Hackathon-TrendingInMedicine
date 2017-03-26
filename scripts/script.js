@@ -14,17 +14,6 @@ var d = new Date();
   sendRequest();
 }*/
 sendRequest();
-if(myMap.length >= 1913){
-  console.log("Done");
-  a = [];
-  for(var x of myMap)
-    a.push(x);
-  a.sort(function(x, y) {
-    return y[1].length - x[1].length;
-  });
-  myMap = new Map(a);
-  console.log(myMap);
-}
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
       input = l[i];
@@ -104,3 +93,12 @@ function abstractGrabber(data){
   }
   b = true;
 }
+console.log("Done");
+a = [];
+for(var x of myMap)
+  a.push(x);
+a.sort(function(x, y) {
+  return y[1].length - x[1].length;
+});
+myMap = new Map(a);
+console.log(myMap);
