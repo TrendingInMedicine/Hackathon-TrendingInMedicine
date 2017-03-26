@@ -60,8 +60,8 @@ function abstractGrabber(data){
       dataType: "json",
       data: { url : abstractURL }
     })
-    counter = counter + 1;
     .done(function( json_contents ) {
+      counter = counter + 1;
       if (json_contents.hasOwnProperty["full-text-retrieval-response"] == false){
         console.log("Im stupid");
         return;
