@@ -32,10 +32,10 @@ var myMap = new Map();
   sendRequest();
 }*/
 sendRequest();
-
+var temp_json = "";
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
-      var temp_json = "";
+      temp_json = "";
       input = l[i];
       var inFormated = input.split(' ').join('+');
       //console.log(inFormated);
