@@ -52,8 +52,7 @@ function display(){
 							desDiv.setAttribute("class", "snow")
 							var br = document.createElement("br");
 							desDiv.innerHTML = desc;
-
-
+							desDiv.href = url;
 							console.log("#top" + j);
 							var top = "#top" + j;
 							console.log(top);
