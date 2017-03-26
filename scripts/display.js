@@ -37,16 +37,16 @@ function display(){
 		  			  .done(function( json_contents ) {
 								temp_json = json_contents;
 								console.log(temp_json);
-		// 					j = j + 1;
 		// 					//console.log(i);
-		// 					var data = json_contents["full-text-retrieval-response"]["coredata"];
-		// 					console.log(data);
-		// 					var title = data["dc:title"]
-		// 					var url = data["link"][1]["@href"]
-		// 					var doi = data["prism:doi"]
-		// 					var pn = data["prism:publicationName"]
-		// 					var date = data["prism:coverDate"]
-		// 					var desc = title + ". " + pn + " " + date + " " + doi;
+		  					var data = json_contents["full-text-retrieval-response"]["coredata"];
+		   					console.log(data);
+							var title = data["dc:title"]
+							var url = data["link"][1]["@href"]
+							var doi = data["prism:doi"]
+							var pn = data["prism:publicationName"]
+							var date = data["prism:coverDate"]
+							var desc = title + ". " + pn + " " + date + " " + doi;
+							console.log(desc);
 		// 					// li.push(desc);
 		// 					// if(li.length == 52){
 		// 					// 	addList();
