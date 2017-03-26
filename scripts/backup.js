@@ -1,6 +1,6 @@
 var li = [];
 var lengths = [];
-var finalMap = new Map();
+var links = [];
 count = 0
 var j = 1;
 function display(){
@@ -55,7 +55,7 @@ function display(){
 							desc = desc.replace(/['”]+/g, '');
 							desc = desc.replace(/['“]+/g, '');
 							desc = desc.replace(/['"]+/g, '');
-							finalMap.set(desc, url);
+							links.push(url);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
 							// 					// 	addList();
