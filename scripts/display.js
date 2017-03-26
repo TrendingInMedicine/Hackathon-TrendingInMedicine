@@ -1,3 +1,4 @@
+var l = [];
 function display(){
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
@@ -31,7 +32,7 @@ function display(){
 						  data: { url : abstractURL }
 						})
 					  .done(function( json_contents ) {
-							j = j +1;
+							j = j + 1;
 							console.log(i);
 							var data = json_contents["full-text-retrieval-response"]["coredata"];
 							var title = data["dc:title"]
@@ -40,15 +41,21 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							//console.log(desc);
-							var desDiv = document.createElement("a");
-							var br = document.createElement("br");
-							desDiv.innerHTML = desc;
-							console.log("#top" + j);
-							var top = "#top" + j;
-							console.log(top);
-							$(top).append(br);
-							$(top).append(desDiv);
+							l.push[desc];
+							if(l.length == j){
+								addList();
+							}
+							// //console.log(desc);
+							// var desDiv = document.createElement("a");
+							// var br = document.createElement("br");
+							// desDiv.innerHTML = desc;
+							//
+
+							// console.log("#top" + j);
+							// var top = "#top" + j;
+							// console.log(top);
+							// $(top).append(br);
+							// $(top).append(desDiv);
 							// aLink  = document.createElement("a");
 							// var node = document.createTextNode(desc);
 							// aLink.appendChild(node);
@@ -62,4 +69,25 @@ function display(){
 				}
 			}
 		});
+}
+
+function addList(){
+	for (var i = 0; i < l.length; i++) {
+		var d = l[i];
+		var desDiv = document.createElement("a");
+		var br = document.createElement("br");
+		desDiv.innerHTML = desc;
+
+		console.log("#top" + j);
+		var top = "#top" + j;
+		console.log(top);
+		$(top).append(br);
+		$(top).append(desDiv);
+		aLink  = document.createElement("a");
+		var node = document.createTextNode(desc);
+		aLink.appendChild(node);
+		console.log(aLink);
+		myDiv.appendChild(aLink);
+		$("#result" + i).html(x[0]);
+	}
 }
