@@ -1,4 +1,4 @@
-var li = new Set();
+var li = {};
 function display(){
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
