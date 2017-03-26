@@ -11,6 +11,7 @@ function display(){
 		  var i= 0;
 	  	if(id == "mar2017"){
 		  	for(var x of myMap)  {
+					  var temp_json = "";
 		   			i = i + 1;
 		   			//console.log(i);
 					if(i > 10)
@@ -26,14 +27,16 @@ function display(){
 		    			for (var y of x[1]) {
 		   		    var doi = y;
 		   		    var abstractURL = aSearchURL + doi + format;
-		   				console.log(abstractURL);
-		// 				$.ajax({
-		// 				  method: "GET",
-		// 				  url: "worker.php",
-		// 	        dataType: "json",
-		// 				  data: { url : abstractURL }
-		// 				})
-		// 			  .done(function( json_contents ) {
+		   				//console.log(abstractURL);
+		   				$.ajax({
+						  method: "GET",
+						  url: "worker.php",
+			        dataType: "json",
+						  data: { url : abstractURL }
+						})
+		  			  .done(function( json_contents ) {
+								temp_json = json_contents;
+								console.log(temp_json);
 		// 					j = j + 1;
 		// 					//console.log(i);
 		// 					var data = json_contents["full-text-retrieval-response"]["coredata"];
@@ -69,6 +72,7 @@ function display(){
 		// 		}
 		// 	}
 		// });
+	});
 	}
 	}
 	}
