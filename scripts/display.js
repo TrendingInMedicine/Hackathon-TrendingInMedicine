@@ -1,4 +1,5 @@
 var li = [];
+var lengths = [];
 count = 0
 var j = 1;
 function display(){
@@ -27,7 +28,8 @@ function display(){
 					var format = "?httpAccept=application/json";
 					//var j = 0;
 					for (var y of x[1]) {
-						console.log(x[1].size);
+						//console.log(x[1].size);
+						lengths.push(x[1].size);
 						var doi = y;
 						var abstractURL = aSearchURL + doi + format;
 						//console.log(abstractURL);
@@ -81,4 +83,5 @@ function display(){
 			}
 		}
 	});
+	console.log(lengths);
 }
