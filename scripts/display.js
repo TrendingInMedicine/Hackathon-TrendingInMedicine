@@ -13,6 +13,7 @@ function display(){
 					console.log(x);
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
+					myDiv.innerHTML = "#" + x[0];
 					$('#output').append(myDiv);
 					var aSearchURL = "http://api.elsevier.com/content/article/"
 					var format = "?httpAccept=application/json";
@@ -44,7 +45,6 @@ function display(){
 							// aLink.appendChild(node);
 							// console.log(aLink);
 							// myDiv.appendChild(aLink);
-							// myDiv.innerHTML = "#" + x[0] + "\n" + desc;
 							//$("#result" + i).html(x[0]);
 					  });
 					}
