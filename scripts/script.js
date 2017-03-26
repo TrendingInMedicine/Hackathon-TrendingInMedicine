@@ -30,88 +30,85 @@ var myMap = new Map();
 
 // var d = new Date();
 /*if(d.getDay == 0){ //Calls this weekly
-  sendRequest();
+sendRequest();
 }*/
 sendRequest();
 var temp_json = "";
 function sendRequest(){
-    for (var i = 0; i < l.length; i++) {
-      temp_json = "";
-      input = l[i];
-      var inFormated = input.split(' ').join('+');
-      //console.log(inFormated);
-      var searchURL = "https://api.elsevier.com/content/search/scidir?"
-      var inputData={
-          query:  "query=srctitle(" + inFormated +")",
-          apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
-          count: "&count=200",
-          date : "+and+pub-date+aft+20170301+and+pub-date+bef+20170331",
-          output: "&httpAccept=application/json",
+  for (var i = 0; i < l.length; i++) {
+    temp_json = "";
+    input = l[i];
+    var inFormated = input.split(' ').join('+');
+    //console.log(inFormated);
+    var searchURL = "https://api.elsevier.com/content/search/scidir?"
+    var inputData={
+      query:  "query=srctitle(" + inFormated +")",
+      apiKey: "&apiKey=ac165557b6b0a14aeb6309577f50875a",
+      count: "&count=200",
+      date : "+and+pub-date+aft+20170301+and+pub-date+bef+20170331",
+      output: "&httpAccept=application/json",
+    }
+    var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
+    //console.log(jsonURL);
+
+    $.ajax({
+      method: "GET",
+      url: "worker.php",
+      dataType: "json",
+      data: { url : jsonURL }
+    })
+    .done(function( json_contents ) {
+      temp_json = json_contents;
+      console.log(temp_json);
+      array = temp_json["search-results"].entry;
+      console.log(array);
+      for (var j = 0; j < array.length; j++) {
+        var entry = array[j];
+        var doi = "doi/" + entry["prism:doi"];
+        var title = entry["dc:title"];
+        //console.log(title);
+        if (typeof title === 'undefined' || title === null) {
+          console.log("Error");
+          return;
+        }
+
+        var res = title.split(" ");
+        //console.log(res);
+        for (var k = 0; k < res.length; k++) {
+          //console.log(k);
+          var boshal = res[k].toLowerCase();
+          boshal = boshal.replace(/['“]+/g, '');
+          //console.log(boshal);
+          if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
+
+            if(myMap.has(boshal)){
+              var doiList = myMap.get(boshal);
+              doiList.push(doi);
+              myMap.set(boshal, doiList)
+            }
+            else{
+              var doiList = [];
+              doiList.push(doi);
+              myMap.set(boshal, doiList)
+            }
+          }
+        }
       }
-      var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
-      //console.log(jsonURL);
 
-      $.ajax({
-			  method: "GET",
-			  url: "worker.php",
-        dataType: "json",
-			  data: { url : jsonURL }
-			})
-		  .done(function( json_contents ) {
-        temp_json = json_contents;
-        console.log(temp_json);
-        array = temp_json["search-results"].entry;
-        console.log(array);
-        for (var j = 0; j < array.length; j++) {
-          var entry = array[j];
-          var doi = "doi/" + entry["prism:doi"];
-            var title = entry["dc:title"];
-            //console.log(title);
-            if (typeof title === 'undefined' || title === null) {
-              console.log("Error");
-              return;
-            }
 
-            var res = title.split(" ");
-            //console.log(res);
-             for (var k = 0; k < res.length; k++) {
-                  //console.log(k);
-                   var boshal = res[k].toLowerCase();
-                   boshal = boshal.replace(/['“]+/g, '');
-                   //console.log(boshal);
-                   if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
-
-                     if(myMap.has(boshal)){
-                       var doiList = myMap.get(boshal);
-                       doiList.push(doi);
-                       myMap.set(boshal, doiList)
-                     }
-                     else{
-                       var doiList = [];
-                      doiList.push(doi);
-                      myMap.set(boshal, doiList)
-                   }
-                   }
-            }
-                }
-
-            //  }
-            //   if(myMap.size == 1908){
-            //     console.log("Done");
-            //     a = [];
-            //     for(var x of myMap)
-            //       a.push(x);
-            //     a.sort(function(x, y) {
-            //       return y[1].length - x[1].length;
-            //     });
-            //     myMap = new Map(a);
-            //     console.log(myMap);
-            //     break;
       //}
-//}
-  });
+    });
   }
-  }
-  //   var boshal = res[i].toLowerCase();
-    // boshal = boshal.replace(/['“]+/g, '');
-     //console.log(boshal);
+      console.log("Done");
+      a = [];
+      for(var x of myMap)
+        a.push(x);
+      a.sort(function(x, y) {
+        return y[1].length - x[1].length;
+      });
+      myMap = new Map(a);
+      console.log(myMap);
+}
+//   var boshal = res[i].toLowerCase();
+// boshal = boshal.replace(/['“]+/g, '');
+//console.log(boshal);
