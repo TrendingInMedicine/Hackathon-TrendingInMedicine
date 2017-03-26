@@ -18,6 +18,7 @@ function display(){
 					$('#output').append(myDiv);
 					var aSearchURL = "http://api.elsevier.com/content/article/"
 					var format = "?httpAccept=application/json";
+					var j = 0;
 					for (var y of x[1]) {
 
 				    var doi = y;
@@ -30,6 +31,8 @@ function display(){
 						  data: { url : abstractURL }
 						})
 					  .done(function( json_contents ) {
+							j = j +1;
+							console.log(i);
 							var data = json_contents["full-text-retrieval-response"]["coredata"];
 							var title = data["dc:title"]
 							var url = data["link"][1]
@@ -37,12 +40,12 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							console.log(desc);
+							//console.log(desc);
 							var desDiv = document.createElement("a");
 							var br = document.createElement("br");
 							desDiv.innerHTML = desc;
-							console.log("#top" + i);
-							var top = "#top" + i;
+							console.log("#top" + j);
+							var top = "#top" + j;
 							console.log(top);
 							$(top).append(br);
 							$(top).append(desDiv);
