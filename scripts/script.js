@@ -62,23 +62,10 @@ function abstractGrabber(data){
     })
     .done(function( json_contents ) {
       counter = counter + 1;
-      if (json_contents.hasOwnProperty["full-text-retrieval-response"] == false){
-        console.log("Im stupid");
-        return;
-      }
-      if (json_contents["full-text-retrieval-response"].hasOwnProperty["coredata"] == false){
-        console.log("Im stupid");
-        return;
-      }
-      if (json_contents["full-text-retrieval-response"]["coredata"].hasOwnProperty["dc:title"] == false){
-        console.log("Im stupid");
-        return;
-      }
       gayshit = json_contents;
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       if (typeof title === 'undefined' || title === null) {
-        console.log("Im stupid");
-        continue;
+        return;
       }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
