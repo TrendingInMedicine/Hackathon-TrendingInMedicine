@@ -1,4 +1,4 @@
-var l = [];
+var li = [];
 function display(){
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
@@ -84,7 +84,7 @@ function addList(){
 		$(top).append(br);
 		$(top).append(desDiv);
 		aLink  = document.createElement("a");
-		var node = document.createTextNode(desc);
+		var node = document.createTextNode(d);
 		aLink.appendChild(node);
 		console.log(aLink);
 		myDiv.appendChild(aLink);
