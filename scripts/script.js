@@ -14,7 +14,17 @@ var d = new Date();
   sendRequest();
 }*/
 sendRequest();
-
+if(myMap.length >= 1933){
+  console.log("Done");
+  a = [];
+  for(var x of myMap)
+    a.push(x);
+  a.sort(function(x, y) {
+    return x[1].length - y[1].length;
+  });
+  myMap = new Map(a);
+  console.log(myMap);
+}
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
       input = l[i];
@@ -40,17 +50,6 @@ function sendRequest(){
         //console.log(json_contents);
         abstractGrabber(json_contents)
 		  });
-    }
-    if(b){
-      console.log("Done");
-      a = [];
-      for(var x of myMap)
-        a.push(x);
-      a.sort(function(x, y) {
-        return x[1].length - y[1].length;
-      });
-      myMap = new Map(a);
-      console.log(myMap);
     }
     // grab each articles DOI and parse them
     // http://api.elsevier.com/content/article/[doi]?httpAccept=application/json - format to get abstract and other shit
@@ -96,6 +95,9 @@ function abstractGrabber(data){
             doiList.push(doi);
             myMap.set(res[i], doiList)
           }
+        }
+        if(myMap.length == 1933){
+          console.log(entry);
         }
       }
     });
