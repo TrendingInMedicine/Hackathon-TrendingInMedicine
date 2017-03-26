@@ -35,7 +35,7 @@ var myMap = new Map();
 sendRequest();
 var temp_json = "";
 function sendRequest(){
-    for (var i = 0; i < l.length; i++) {
+    for (var i = 0; i < 1; i++) {
       temp_json = "";
       input = l[i];
       var inFormated = input.split(' ').join('+');
