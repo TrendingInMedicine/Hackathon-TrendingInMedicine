@@ -1,5 +1,6 @@
 var li = [];
 count = 0
+var j = 0;
 function display(){
 	$('body').on('click', 'a', function() {
 
@@ -35,10 +36,11 @@ function display(){
 						  data: { url : abstractURL }
 						})
 		  			  .done(function( json_contents ) {
+								j = j + 1;
 								temp_json = json_contents;
 								console.log(temp_json);
 		// 					//console.log(i);
-		  					var data = json_contents["full-text-retrieval-response"]["coredata"];
+		  					var data = temp_json["full-text-retrieval-response"]["coredata"];
 		   					console.log(data);
 							var title = data["dc:title"]
 							var url = data["link"][1]["@href"]
