@@ -35,7 +35,7 @@ var myMap = new Map();
 sendRequest();
 var temp_json = "";
 function sendRequest(){
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < l.length; i++) {
       temp_json = "";
       input = l[i];
       var inFormated = input.split(' ').join('+');
@@ -66,16 +66,16 @@ function sendRequest(){
           var entry = array[j];
           var doi = "doi/" + entry["prism:doi"];
             var title = entry["dc:title"];
-            console.log(title);
+            //console.log(title);
             if (typeof title === 'undefined' || title === null) {
               console.log("Error");
               return;
             }
 
             var res = title.split(" ");
-            console.log(res);
+            //console.log(res);
              for (var k = 0; k < res.length; k++) {
-                  console.log(k);
+                  //console.log(k);
                    var boshal = res[k].toLowerCase();
                    boshal = boshal.replace(/['“]+/g, '');
                    //console.log(boshal);
