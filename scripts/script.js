@@ -35,6 +35,7 @@ sendRequest();
 
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
+      var json_contents = "";
       input = l[i];
       var inFormated = input.split(' ').join('+');
       //console.log(inFormated);
@@ -48,7 +49,7 @@ function sendRequest(){
       }
       var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
       //console.log(jsonURL);
-      json_contents = "";
+
       $.ajax({
 			  method: "GET",
 			  url: "worker.php",
