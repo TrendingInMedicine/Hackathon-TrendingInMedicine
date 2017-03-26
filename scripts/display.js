@@ -15,6 +15,7 @@ function display(){
 					var format = "?httpAccept=application/json";
 					var aLink;
 					var myDiv = document.createElement("DIV");
+					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + x[0];
 					for (var y of x[1]) {
 				    var doi = y;
@@ -36,14 +37,13 @@ function display(){
 							var desc = title + ". " + pn + " " + date + " " + doi;
 							aLink  = document.createElement("A");
 							aLink.innerHTML = desc;
-
+							$('#top' + i).append(aLink);
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
-					myDiv.setAttribute("id", "top" + i);
+
 					$("#result" + i).html(x[0]);
 					$('#output').append(myDiv);
-					$('#output').append(aLink);
 				}
 			}
 		});
