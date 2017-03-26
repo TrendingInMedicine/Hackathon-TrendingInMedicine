@@ -41,8 +41,8 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							l.push[desc];
-							if(l.length == j){
+							li.push(desc);
+							if(li.length == j){
 								addList();
 							}
 							// //console.log(desc);
@@ -72,11 +72,11 @@ function display(){
 }
 
 function addList(){
-	for (var i = 0; i < l.length; i++) {
-		var d = l[i];
+	for (var i = 0; i < li.length; i++) {
+		var d = li[i];
 		var desDiv = document.createElement("a");
 		var br = document.createElement("br");
-		desDiv.innerHTML = desc;
+		desDiv.innerHTML = d;
 
 		console.log("#top" + j);
 		var top = "#top" + j;
