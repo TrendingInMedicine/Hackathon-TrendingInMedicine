@@ -63,9 +63,6 @@ function abstractGrabber(data){
         console.log("Error");
         return;
       }
-      if(myMap.size > 1900){
-        console.log(entry);
-      }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
         res[i] = res[i].toLowerCase();
@@ -80,10 +77,6 @@ function abstractGrabber(data){
             var doiList = new Set();
             doiList.add(doi);
             myMap.set(res[i], doiList)
-          }
-          if(myMap.size == 1908){
-            console.log("get here");
-            sortTheMap();
           }
         }
       }
