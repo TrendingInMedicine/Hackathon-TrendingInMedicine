@@ -72,6 +72,7 @@ function display(){
 							// });
 						});
 					}
+					console.log(j);
 					j = j + 1;
 
 				}
