@@ -53,6 +53,14 @@ function abstractGrabber(data){
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
+    var data = json_contents["full-text-retrieval-response"]["coredata"];
+    var title = data["dc:title"]
+    var url = data["link"][1]
+    var doi = data["prism:doi"]
+    var pn = data["prism:publicationName"]
+    var date = data["prism:coverDate"]
+    var desc = title + " " + pn + " " + date + " " + doi;
+    console.log(desc);
     //console.log(aSearchURL+doi+format);
     abstractURL = aSearchURL + doi + format;
     $.ajax({
