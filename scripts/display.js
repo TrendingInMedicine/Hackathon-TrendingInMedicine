@@ -35,6 +35,7 @@ function display(){
 					  .done(function( json_contents ) {
 							j = j + 1;
 							console.log(i);
+							console.log(data);
 							var data = json_contents["full-text-retrieval-response"]["coredata"];
 							var title = data["dc:title"]
 							var url = data["link"][1]
