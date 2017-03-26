@@ -8,22 +8,22 @@ var commonWords = new Set(['a', 'about', 'above', 'after', 'again', 'against', '
 
 var myMap = new Map();
 
-for (i of stringMap)
-{
-  myMap.set(i[0], new Set(i[1]));
-}
-
-console.log(commonWords);
-
-console.log("Done");
-a = [];
-for(var x of myMap)
-  a.push(x);
-a.sort(function(x, y) {
-  return y[1].size - x[1].size;
-});
-myMap = new Map(a);
-console.log(myMap);
+// for (i of stringMap)
+// {
+//   myMap.set(i[0], new Set(i[1]));
+// }
+//
+// console.log(commonWords);
+//
+// console.log("Done");
+// a = [];
+// for(var x of myMap)
+//   a.push(x);
+// a.sort(function(x, y) {
+//   return y[1].size - x[1].size;
+// });
+// myMap = new Map(a);
+// console.log(myMap);
 
 
 
@@ -31,7 +31,7 @@ console.log(myMap);
 /*if(d.getDay == 0){ //Calls this weekly
   sendRequest();
 }*/
-// sendRequest();
+sendRequest();
 
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
@@ -55,8 +55,8 @@ function sendRequest(){
 			  data: { url : jsonURL }
 			})
 		  .done(function( json_contents ) {
-        //console.log(json_contents);
-        abstractGrabber(json_contents)
+        console.log(json_contents);
+        //abstractGrabber(json_contents)
 		  });
     }
 
