@@ -38,7 +38,7 @@ function display(){
 							var data = json_contents["full-text-retrieval-response"]["coredata"];
 							console.log(data);
 							var title = data["dc:title"]
-							var url = data["link"][1]
+							var url = data["link"][1]["@href"]
 							var doi = data["prism:doi"]
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
