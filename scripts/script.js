@@ -64,41 +64,40 @@ function sendRequest(){
           var entry = array[i];
           var doi = "doi/" + entry["prism:doi"];
             var title = entry["dc:title"];
-            console.log(title);
+            //console.log(title);
             if (typeof title === 'undefined' || title === null) {
               console.log("Error");
               return;
             }
-        //     var res = title.split(" ");
-        //     for (var i = 0; i < res.length; i++) {
-        //       res[i] = res[i].toLowerCase();
-        //       res[i].replace(/['“]+/g, '');
-        //       if (commonWords.has(res[i].toLowerCase()) == false && res[i] != "" && res[i].length > 3){
-        //         if(myMap.has(res[i])){
-        //           var doiList = myMap.get(res[i]);
-        //           doiList.push(doi);
-        //           myMap.set(res[i], doiList)
-        //         }
-        //         else{
-        //           var doiList = [];
-        //           doiList.push(doi);
-        //           myMap.set(res[i], doiList)
-        //         }
-        //       }
-        //       if(myMap.size == 1908){
-        //         console.log("Done");
-        //         a = [];
-        //         for(var x of myMap)
-        //           a.push(x);
-        //         a.sort(function(x, y) {
-        //           return y[1].length - x[1].length;
-        //         });
-        //         myMap = new Map(a);
-        //         console.log(myMap);
-        //         break;
-        //       }
-        //     }
-        // }
+            var res = title.split(" ");
+            for (var i = 0; i < res.length; i++) {
+              res[i] = res[i].toLowerCase();
+              res[i].replace(/['“]+/g, '');
+              if (commonWords.has(res[i].toLowerCase()) == false && res[i] != "" && res[i].length > 3){
+                if(myMap.has(res[i])){
+                  var doiList = myMap.get(res[i]);
+                  doiList.push(doi);
+                  myMap.set(res[i], doiList)
+                }
+                else{
+                  var doiList = [];
+                  doiList.push(doi);
+                  myMap.set(res[i], doiList)
+                }
+              }
+              if(myMap.size == 1908){
+                console.log("Done");
+                a = [];
+                for(var x of myMap)
+                  a.push(x);
+                a.sort(function(x, y) {
+                  return y[1].length - x[1].length;
+                });
+                myMap = new Map(a);
+                console.log(myMap);
+                break;
+              }
+            }
     }
 
     // grab each articles DOI and parse them
