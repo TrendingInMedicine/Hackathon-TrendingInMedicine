@@ -59,11 +59,7 @@ function display(){
 							console.log(top);
 							$(top).append(br);
 							$(top).append(desDiv);
-							aLink  = document.createElement("a");
-							var node = document.createTextNode(desc);
-							aLink.appendChild(node);
-							console.log(aLink);
-							myDiv.appendChild(aLink);
+
 							$("#result" + i).html(x[0]);
 					  });
 					}
