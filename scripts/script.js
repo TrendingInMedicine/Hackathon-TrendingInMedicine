@@ -75,7 +75,8 @@ function sendRequest(){
              for (var i = 0; i < res.length; i++) {
                  var boshal = res[i].toLowerCase();
                  boshal = boshal.replace(/['“]+/g, '');
-                 console.log(boshal);
+                 //console.log(boshal);
+                 console.log(commonWords.has(boshal));
               // if (commonWords.has(boshal) == false && boshal != "" && boshal.length > 3){
 
             //     if(myMap.has(res[i])){
