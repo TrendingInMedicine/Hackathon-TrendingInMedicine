@@ -13,6 +13,7 @@ function display(){
 			if(id == "mar2017"){
 				for(var x of myMap)  {
 					var temp_json = "";
+					j = 1;
 					i = i + 1;
 					//console.log(i);
 					if(i > 10)
