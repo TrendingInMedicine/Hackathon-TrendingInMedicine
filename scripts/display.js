@@ -3,7 +3,6 @@ var links = mylinks;
 var lengths = [];
 count = 0
 var j = 1;
-var snowshal = 0;
 function display(){
 	$('body').on('click', 'a', function() {
 
@@ -13,6 +12,7 @@ function display(){
 		if((id != "uneeded" || typeof id != 'undefined' || id != null) && (count === 0)){
 			count = count + 1;
 			document.getElementById("output").innerHTML = "";
+			var snowshal = 0;
 			var i = 0;
 			if(id == "mar2017"){
 				for (var m of myMap.entries())
