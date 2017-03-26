@@ -86,21 +86,18 @@ function abstractGrabber(data){
           }
         }
         if(myMap.size == 1908){
-          sortTheMap();
-          console.log(entry);
+          console.log("Done");
+          a = [];
+          for(var x of myMap)
+            a.push(x);
+          a.sort(function(x, y) {
+            return y[1].size - x[1].size;
+          });
+          myMap = new Map(a);
+          console.log(myMap);
+          break;
         }
       }
     });
   }
-}
-function sortTheMap(){
-  console.log("Done");
-  a = [];
-  for(var x of myMap)
-    a.push(x);
-  a.sort(function(x, y) {
-    return y[1].size - x[1].size;
-  });
-  myMap = new Map(a);
-  console.log(myMap);
 }
