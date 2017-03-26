@@ -68,23 +68,11 @@ function sendRequest(){
 }
 function abstractGrabber(data){
   array = data["search-results"].entry;
-  var aSearchURL = "http://api.elsevier.com/content/article/"
-  var format = "?httpAccept=application/json";
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
-    //console.log(aSearchURL+doi+format);
-    abstractURL = aSearchURL + doi + format;
-    $.ajax({
-      method: "GET",
-      url: "worker.php",
-      dataType: "json",
-      data: { url : abstractURL }
-    })
-    .done(function( json_contents ) {
-      counter = counter + 1;
-      gayshit = json_contents;
-      var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
+      var title = entry["dc:title"];
+      console.log(title);
       if (typeof title === 'undefined' || title === null) {
         console.log("Error");
         return;
@@ -118,6 +106,5 @@ function abstractGrabber(data){
           break;
         }
       }
-    });
   }
 }
