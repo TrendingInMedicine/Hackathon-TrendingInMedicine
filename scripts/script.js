@@ -64,25 +64,21 @@ function abstractGrabber(data){
       counter = counter + 1;
       gayshit = json_contents;
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
-      while (typeof title === 'undefined' || title === null) {
-        console.log("Im here");
+      if (typeof title === 'undefined' || title === null) {
         i = i + 1;
+        console.log(i);
         var entry = array[i];
-        if(entry === 'undefined'){
-          console.log("xd");
-          return;
-        }
         var doi = "doi/" + entry["prism:doi"];
         abstractURL = aSearchURL + doi + format;
+        console.log(abstractURL);
         $.ajax({
           method: "GET",
           url: "worker.php",
           dataType: "json",
           data: { url : abstractURL }
         })
-        .done(function( otherjson ) {
-          json_contents = otherjson;
-          var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
+        .done(function(nextJson ) {
+          json_contents = nextJson;
         });
       }
       var res = title.split(" ");
