@@ -64,8 +64,8 @@ function abstractGrabber(data){
         console.log("Im stupid");
         return;
       }
-      var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       gayshit = json_contents;
+      var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
         res[i] = res[i].toLowerCase();
