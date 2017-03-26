@@ -15,7 +15,7 @@ function display(){
 		   			console.log(i);
 					if(i > 10)
 						break;
-		// 			console.log(x);
+		  			console.log(x);
 		// 			var myDiv = document.createElement("DIV");
 		// 			myDiv.setAttribute("id", "top" + i);
 		// 			myDiv.innerHTML = "#" + x[0];
