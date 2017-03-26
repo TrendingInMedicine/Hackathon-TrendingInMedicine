@@ -13,6 +13,7 @@ function display(){
 					console.log(x);
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
+					$('#output').append(myDiv);
 					var aSearchURL = "http://api.elsevier.com/content/article/"
 					var format = "?httpAccept=application/json";
 					for (var y of x[1]) {
@@ -34,18 +35,21 @@ function display(){
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
 							console.log(desc);
+
+							var desDiv = document.createElement("DIV");
+							desDiv.innerHTML = desc;
+							$('#top' +i).append(desDiv);
 							// aLink  = document.createElement("a");
 							// var node = document.createTextNode(desc);
 							// aLink.appendChild(node);
 							// console.log(aLink);
 							// myDiv.appendChild(aLink);
-							myDiv.innerHTML = "#" + x[0] + "\n" + desc;
-							$("#result" + i).html(x[0]);
+							// myDiv.innerHTML = "#" + x[0] + "\n" + desc;
+							//$("#result" + i).html(x[0]);
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
 
-					$('#output').append(myDiv);
 				}
 			}
 		});
