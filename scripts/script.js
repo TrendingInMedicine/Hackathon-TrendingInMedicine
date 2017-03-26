@@ -35,7 +35,7 @@ sendRequest();
 
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
-      var json_contents = "";
+      var temp_json = "";
       input = l[i];
       var inFormated = input.split(' ').join('+');
       //console.log(inFormated);
@@ -57,8 +57,9 @@ function sendRequest(){
 			  data: { url : jsonURL }
 			})
 		  .done(function( json_contents ) {
-        console.log(json_contents);
-        abstractGrabber(json_contents)
+        temp_json = json_contents;
+        console.log(temp_json);
+        abstractGrabber(temp_json)
 		  });
     }
 
