@@ -78,17 +78,17 @@ function sendRequest(){
                  //console.log(boshal);
                  //console.log(commonWords.has(boshal));
                if (commonWords.has(boshal) === false && boshal != "" && boshal.length > 3){
-                      console.log("True");
-            //     if(myMap.has(res[i])){
-            //       var doiList = myMap.get(res[i]);
-            //       doiList.push(doi);
-            //       myMap.set(res[i], doiList)
-            //     }
-            //     else{
-            //       var doiList = [];
-            //       doiList.push(doi);
-            //       myMap.set(res[i], doiList)
-            //     }
+                    //  console.log("True");
+                if(myMap.has(res[i])){
+                   var doiList = myMap.get(res[i]);
+                   doiList.push(doi);
+                   myMap.set(res[i], doiList)
+                }
+                else{
+                  var doiList = [];
+                   doiList.push(doi);
+                   myMap.set(res[i], doiList)
+                 }
             //   }
             //   if(myMap.size == 1908){
             //     console.log("Done");
