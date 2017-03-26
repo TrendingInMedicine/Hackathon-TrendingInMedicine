@@ -15,7 +15,7 @@ function display(){
 					var format = "?httpAccept=application/json";
 					var myDiv = document.createElement("DIV");
 					myDiv.innerHTML = "#" + x[0];
-					for (var y in x[1]) {
+					for (var y of x[1]) {
 				    var doi = y;
 				    var abstractURL = aSearchURL + doi + format;
 						console.log(abstractURL);
