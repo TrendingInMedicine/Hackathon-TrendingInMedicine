@@ -34,7 +34,7 @@ function display(){
 						})
 					  .done(function( json_contents ) {
 							j = j + 1;
-							console.log(i);
+							//console.log(i);
 							console.log(data);
 							var data = json_contents["full-text-retrieval-response"]["coredata"];
 							var title = data["dc:title"]
@@ -47,7 +47,7 @@ function display(){
 							// if(li.length == 52){
 							// 	addList();
 							// }
-							console.log(desc);
+							//console.log(desc);
 
 							var desDiv = document.createElement("a");
 							desDiv.setAttribute("class", "snow")
