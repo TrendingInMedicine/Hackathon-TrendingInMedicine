@@ -40,8 +40,10 @@ function display(){
 							var br = document.createElement("br");
 							desDiv.innerHTML = desc;
 							console.log("#top" + i);
-							$("#top" +i).append(br);
-							$("#top" +i).append(desDiv);
+							var top = "#top" + i;
+							console.log(top);
+							$(top).append(br);
+							$(top).append(desDiv);
 							// aLink  = document.createElement("a");
 							// var node = document.createTextNode(desc);
 							// aLink.appendChild(node);
