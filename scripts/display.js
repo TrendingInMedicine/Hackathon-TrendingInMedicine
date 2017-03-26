@@ -2,6 +2,7 @@ function display(){
 	 $('body').on('click', 'a', function() {
     	var id = $(this).attr('id');
     	console.log(id);
+			document.getElementById("#output").innerHTML = "";
 			var i= 0;
 			if(id = "mar2017"){
 				for(var x of myMap)  {
