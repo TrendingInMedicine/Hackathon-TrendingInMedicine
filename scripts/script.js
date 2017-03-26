@@ -48,6 +48,7 @@ function sendRequest(){
       }
       var jsonURL = searchURL + inputData.query + inputData.date + inputData.apiKey + inputData.count + inputData.output;
       //console.log(jsonURL);
+      json_contents = "";
       $.ajax({
 			  method: "GET",
 			  url: "worker.php",
@@ -72,7 +73,7 @@ function abstractGrabber(data){
     var entry = array[i];
     var doi = "doi/" + entry["prism:doi"];
       var title = entry["dc:title"];
-      console.log(title);
+      //console.log(title);
       if (typeof title === 'undefined' || title === null) {
         console.log("Error");
         return;
