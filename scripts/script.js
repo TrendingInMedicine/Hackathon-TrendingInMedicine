@@ -102,7 +102,7 @@ function sortTheMap(){
   for(var x of myMap)
     a.push(x);
   a.sort(function(x, y) {
-    return y[1].length - x[1].length;
+    return y[1].size - x[1].size;
   });
   myMap = new Map(a);
   console.log(myMap);
