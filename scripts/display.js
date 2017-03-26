@@ -6,7 +6,7 @@ function display(){
 			if(id != "uneeded"){
 		  document.getElementById("output").innerHTML = "";
 		  var i= 0;
-	  	if(id = "mar2017"){
+	  	if(id == "mar2017"){
 		  	for(var x of myMap)  {
 		   			i = i + 1;
 		   			console.log(i);
