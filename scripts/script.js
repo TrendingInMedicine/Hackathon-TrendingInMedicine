@@ -36,9 +36,9 @@ function sendRequest(){
 		  .done(function( json_contents ) {
         //console.log(json_contents);
         abstractGrabber(json_contents)
-        console.log("Done");
 		  });
     }
+    console.log("Done");
     // grab each articles DOI and parse them
     // http://api.elsevier.com/content/article/[doi]?httpAccept=application/json - format to get abstract and other shit
     // http://api.elsevier.com/content/article/doi/10.1016/j.ijsu.2005.03.007?httpAccept=application/json - example
