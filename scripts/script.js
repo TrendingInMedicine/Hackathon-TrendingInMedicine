@@ -10,7 +10,7 @@ var myMap = new Map();
 
 for (i of stringMap)
 {
-  myMap.set(i[0], Set(i[1]));
+  myMap.set(i[0], new Set(i[1]));
 }
 
 console.log(commonWords);
