@@ -13,13 +13,12 @@ function display(){
 					console.log(x);
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
-					myDiv.innerHTML = "#" + x[0];
 					var aSearchURL = "http://api.elsevier.com/content/article/"
 					var format = "?httpAccept=application/json";
 					for (var y of x[1]) {
 				    var doi = y;
 				    var abstractURL = aSearchURL + doi + format;
-						console.log(abstractURL);
+						//console.log(abstractURL);
 						$.ajax({
 						  method: "GET",
 						  url: "worker.php",
@@ -40,7 +39,8 @@ function display(){
 							// aLink.appendChild(node);
 							// console.log(aLink);
 							// myDiv.appendChild(aLink);
-							$("#result" + i).html(x[0] + "\n" + desc);
+							myDiv.innerHTML = "#" + x[0] + "\n" + desc;
+							$("#result" + i).html(x[0]);
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
