@@ -1,5 +1,6 @@
 var li = [];
 var lengths = [];
+var finalMap = new Map();
 count = 0
 var j = 1;
 function display(){
@@ -51,11 +52,10 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							console.log(desc);
 							desc = desc.replace(/['”]+/g, '');
 							desc = desc.replace(/['“]+/g, '');
 							desc = desc.replace(/['"]+/g, '');
-							li.push(desc);
+							finalMap.set(desc, url);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
 							// 					// 	addList();
