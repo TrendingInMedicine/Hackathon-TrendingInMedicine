@@ -41,27 +41,28 @@ function display(){
 							var pn = data["prism:publicationName"]
 							var date = data["prism:coverDate"]
 							var desc = title + ". " + pn + " " + date + " " + doi;
-							li.push(desc);
-							if(li.length == 52){
-								addList();
-							}
-							// //console.log(desc);
-							// var desDiv = document.createElement("a");
-							// var br = document.createElement("br");
-							// desDiv.innerHTML = desc;
-							//
+							// li.push(desc);
+							// if(li.length == 52){
+							// 	addList();
+							// }
+							console.log(desc);
 
-							// console.log("#top" + j);
-							// var top = "#top" + j;
-							// console.log(top);
-							// $(top).append(br);
-							// $(top).append(desDiv);
-							// aLink  = document.createElement("a");
-							// var node = document.createTextNode(desc);
-							// aLink.appendChild(node);
-							// console.log(aLink);
-							// myDiv.appendChild(aLink);
-							//$("#result" + i).html(x[0]);
+							var desDiv = document.createElement("a");
+							var br = document.createElement("br");
+							desDiv.innerHTML = desc;
+
+
+							console.log("#top" + j);
+							var top = "#top" + j;
+							console.log(top);
+							$(top).append(br);
+							$(top).append(desDiv);
+							aLink  = document.createElement("a");
+							var node = document.createTextNode(desc);
+							aLink.appendChild(node);
+							console.log(aLink);
+							myDiv.appendChild(aLink);
+							$("#result" + i).html(x[0]);
 					  });
 					}
 					myDiv.setAttribute("class", "boshal");
@@ -77,10 +78,10 @@ function addList(){
 		var desDiv = document.createElement("a");
 		var br = document.createElement("br");
 		desDiv.innerHTML = d;
-		
 		console.log("#top" + j);
 		var top = "#top" + j;
 		console.log(top);
+
 		$(top).append(br);
 		$(top).append(desDiv);
 		aLink  = document.createElement("a");
