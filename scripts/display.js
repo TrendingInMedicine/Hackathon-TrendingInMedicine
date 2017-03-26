@@ -16,12 +16,13 @@ function display(){
 				{
 					if(i>10)
 					break;
+					var myDiv = document.createElement("DIV");
+					myDiv.setAttribute("id", "top" + i);
+					myDiv.innerHTML = "#" + m[0];
+					$('#output').append(myDiv);
 					for(var index = 0; index < m[1].size; index++)
 					{
-				var myDiv = document.createElement("DIV");
-				myDiv.setAttribute("id", "top" + i);
-	    	myDiv.innerHTML = "#" + m[0];
-			  $('#output').append(myDiv);
+
 				var desDiv = document.createElement("p");
 				desDiv.setAttribute("class", "snow")
 				var br = document.createElement("br");
