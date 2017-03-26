@@ -5,7 +5,7 @@ function display(){
 
 		 	var id = $(this).attr('id');
 			console.log(id);
-			if(id != "uneeded" || typeof id != 'undefined' || id != null|| count === 0){
+			if((id != "uneeded" || typeof id != 'undefined' || id != null) && (count === 0)){
 				count = count + 1;
 		  document.getElementById("output").innerHTML = "";
 		  var i= 0;
