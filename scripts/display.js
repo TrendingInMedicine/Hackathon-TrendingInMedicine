@@ -3,7 +3,7 @@ function display(){
 	$('body').on('click', 'a', function() {
 		 	var id = $(this).attr('id');
 			console.log(id);
-			if(id != "uneeded"){
+			if(id != "uneeded" || typeof id != 'undefined' || id != null){
 		  document.getElementById("output").innerHTML = "";
 		  var i= 0;
 	  	if(id == "mar2017"){
