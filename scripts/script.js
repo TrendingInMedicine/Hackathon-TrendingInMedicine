@@ -61,6 +61,7 @@ function abstractGrabber(data){
     .done(function( json_contents ) {
       //console.log(json_contents);
       if (json_contents["full-text-retrieval-response"]["coredata"].hasOwnProperty["dc:title"] == false)
+        console.log("Im stupid");
         return;
       var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
       //console.log(title);
