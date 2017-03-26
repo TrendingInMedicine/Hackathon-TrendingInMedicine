@@ -74,7 +74,7 @@ function abstractGrabber(data){
         .done(function( otherjson ) {
           json_contents = otherjson;
           var title = json_contents["full-text-retrieval-response"]["coredata"]["dc:title"];
-        }
+        });
       }
       var res = title.split(" ");
       for (var i = 0; i < res.length; i++) {
