@@ -14,7 +14,7 @@ var d = new Date();
   sendRequest();
 }*/
 sendRequest();
-if(myMap.length >= 1933){
+if(myMap.length >= 1913){
   console.log("Done");
   a = [];
   for(var x of myMap)
