@@ -11,9 +11,6 @@ function display(){
 						break;
 					}
 					console.log(x);
-					var aSearchURL = "http://api.elsevier.com/content/article/"
-					var format = "?httpAccept=application/json";
-					var aLink;
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + x[0];
