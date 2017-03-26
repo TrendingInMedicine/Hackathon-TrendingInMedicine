@@ -100,11 +100,7 @@ function display(){
 				// 		});
 				// 	}
 				//
-				// //	j = j + 1;
-
-				}
-			}
-		}
+}
+			}		// //	j = j + 1;
 	});
-	console.log(lengths);
 }
