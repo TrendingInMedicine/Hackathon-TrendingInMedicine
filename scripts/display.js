@@ -12,14 +12,14 @@ function display(){
 	  	if(id == "mar2017"){
 		  	for(var x of myMap)  {
 		   			i = i + 1;
-		   			console.log(i);
+		   			//console.log(i);
 					if(i > 10)
 						break;
-		  			console.log(x);
-		// 			var myDiv = document.createElement("DIV");
-		// 			myDiv.setAttribute("id", "top" + i);
-		// 			myDiv.innerHTML = "#" + x[0];
-		// 			$('#output').append(myDiv);
+		  		//	console.log(x);
+		  			var myDiv = document.createElement("DIV");
+		 			  myDiv.setAttribute("id", "top" + i);
+		  			myDiv.innerHTML = "#" + x[0];
+		    		$('#output').append(myDiv);
 		// 			var aSearchURL = "http://api.elsevier.com/content/article/"
 		// 			var format = "?httpAccept=application/json";
 		// 			var j = 0;
