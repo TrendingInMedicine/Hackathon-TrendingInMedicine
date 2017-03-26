@@ -71,6 +71,7 @@ function sendRequest(){
               console.log("Error");
               return;
             }
+          }
             // var res = title.split(" ");
             // //console.log(res);
             //  for (var i = 0; i < res.length; i++) {
