@@ -13,7 +13,9 @@ var d = new Date();
 /*if(d.getDay == 0){ //Calls this weekly
   sendRequest();
 }*/
-sendRequest();
+$.when(sendRequest()).done(function() {
+  sortTheMap();
+});
 function sendRequest(){
     for (var i = 0; i < l.length; i++) {
       input = l[i];
