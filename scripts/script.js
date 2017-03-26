@@ -86,6 +86,7 @@ function abstractGrabber(data){
           }
         }
         if(myMap.size == 1908){
+          sortTheMap();
           console.log(entry);
         }
       }
