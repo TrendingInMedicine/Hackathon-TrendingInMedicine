@@ -39,7 +39,7 @@ function display(){
 				$(top).append(br);
 				$(top).append(desDiv);
 			}
-			snowshal = foshal + snowshal;
+			snowshal = foshal;
 				i = i + 1;
 			}
 				// for(var x of myMap)  {
