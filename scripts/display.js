@@ -24,7 +24,7 @@ function display(){
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + m[0];
 					$('#output').append(myDiv);
-					foshal = foshal + m[1].size;
+					foshal = snowshal + m[1].size;
 					for(var index = snowshal; index < foshal; index++)
 					{
 
