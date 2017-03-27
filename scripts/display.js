@@ -3,7 +3,6 @@ var links = mylinks;
 var lengths = [];
 count = 0
 var j = 1;
-var snowshal = 0;
 function display(){
 	$('body').on('click', 'a', function() {
 
