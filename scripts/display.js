@@ -4,6 +4,7 @@ var lengths = [];
 count = 0
 var j = 1;
 var snowshal = 0;
+var foshal = 0;
 function display(){
 	$('body').on('click', 'a', function() {
 
@@ -23,7 +24,8 @@ function display(){
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + m[0];
 					$('#output').append(myDiv);
-					for(var index = snowshal; index < m[1].size; index++)
+					foshal = foshal + m[1].size;
+					for(var index = snowshal; index < foshal; index++)
 					{
 
 				var desDiv = document.createElement("a");
@@ -36,6 +38,7 @@ function display(){
 				$(top).append(br);
 				$(top).append(desDiv);
 			}
+			snowshal = foshal + snowshal;
 				i = i + 1;
 			}
 				// for(var x of myMap)  {
