@@ -18,7 +18,7 @@ function display(){
 			if(id == "mar2017"){
 				for (var m of myMap.entries())
 				{
-					if(i>10)
+					if(i>9)
 					break;
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
