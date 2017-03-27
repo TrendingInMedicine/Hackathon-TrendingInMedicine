@@ -14,6 +14,7 @@ function display(){
 			count = count + 1;
 			document.getElementById("output").innerHTML = "";
 			var i = 0;
+			var foshal = 0;
 			if(id == "mar2017"){
 				for (var m of myMap.entries())
 				{
@@ -22,8 +23,8 @@ function display(){
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + m[0];
-					$('#output').append(myDiv);
-					var foshal = foshal + m[1].size;
+					$('#output').append(myDiv);				
+					foshal = foshal + m[1].size;
 					console.log(snowshal, foshal);
 					for(var index = snowshal; index < foshal; index++)
 					{
