@@ -4,7 +4,6 @@ var lengths = [];
 count = 0
 var j = 1;
 var snowshal = 0;
-var foshal = 0;
 function display(){
 	$('body').on('click', 'a', function() {
 
@@ -24,7 +23,8 @@ function display(){
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + m[0];
 					$('#output').append(myDiv);
-					foshal = snowshal + m[1].size;
+					var foshal = snowshal + m[1].size;
+					console.log(snowshal, foshal);
 					for(var index = snowshal; index < foshal; index++)
 					{
 
