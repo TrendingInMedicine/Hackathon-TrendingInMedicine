@@ -49,7 +49,6 @@ function display(){
 						});
 					}
 				}
-				getDescriptions(lengths);
 			}
 		}
 	});
@@ -75,6 +74,6 @@ function getDescriptions(arr)
 						console.log(arr.length, li.length);
 						if(arr.length === li.length)
 						{
-							console.log(li);
+							return(li);
 						}
 }
