@@ -44,7 +44,7 @@ function display(){
 						
 						.done(function( json_contents ) {
 							temp_json = json_contents;
-							lengths.push(json_contents);
+							lengths.push(temp_json);
 							var data = temp_json["full-text-retrieval-response"]["coredata"];
 							//console.log(data);
 							var title = data["dc:title"]
