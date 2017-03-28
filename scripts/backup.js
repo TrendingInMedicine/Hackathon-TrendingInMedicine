@@ -32,7 +32,6 @@ function display(){
 					//var j = 0;
 					for (var y of x[1]) {
 						//console.log(x[1].size);
-						lengths.push(y);
 						var doi = y;
 						var abstractURL = aSearchURL + doi + format;
 						//console.log(abstractURL);
