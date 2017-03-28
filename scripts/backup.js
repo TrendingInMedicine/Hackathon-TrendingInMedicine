@@ -34,7 +34,6 @@ function display(){
 						//console.log(x[1].size);
 						lengths.push(y);
 						var doi = y;
-						console.log(doi);
 						var abstractURL = aSearchURL + doi + format;
 						//console.log(abstractURL);
 						$.ajax({
@@ -46,8 +45,7 @@ function display(){
 						
 						.done(function( json_contents ) {
 							temp_json = json_contents;
-							console.log(temp_json);
-							// 					//console.log(i);
+							lengths.push(json_contents);
 							var data = temp_json["full-text-retrieval-response"]["coredata"];
 							//console.log(data);
 							var title = data["dc:title"]
@@ -60,7 +58,6 @@ function display(){
 							desc = desc.replace(/['“]+/g, '');
 							desc = desc.replace(/['"]+/g, '');
 							links.push(url);
-							console.log(x[0], desc);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
 							// 					// 	addList();
