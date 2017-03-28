@@ -86,5 +86,9 @@ function getDescriptions(arr)
 							//$(top).append(br);
 							//$(top).append(desDiv);
 						}
+						if(arr.length === li.length)
+						{
+							return;
+						}
 }
 
