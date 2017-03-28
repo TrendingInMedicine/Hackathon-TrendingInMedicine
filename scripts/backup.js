@@ -56,7 +56,6 @@ function display(){
 }
 function getDescriptions(arr)
 {
-	console.log(arr);
 				for (var i of arr)
 				{
 							var data = i["full-text-retrieval-response"]["coredata"];
@@ -73,6 +72,7 @@ function getDescriptions(arr)
 							li.push(desc);
 							links.push(url);
 						}
+						console.log(arr.length, li.length);
 						if(arr.length === li.length)
 						{
 							console.log(li);
