@@ -41,19 +41,15 @@ function display(){
 							dataType: "json",
 							data: { url : abstractURL }
 						})
-<<<<<<< HEAD
 
 						.done(function( json_contents ) {
 							temp_json = json_contents;
 							lengths.push(temp_json);
 
-=======
-
 						.done(function( json_contents ) {
 							temp_json = json_contents;
 							lengths.push(temp_json);
 
->>>>>>> ea095a6bfb7cf4b7434a652bde0d66749a815b30
 						});
 					}
 				}
@@ -104,5 +100,3 @@ function getDescriptions(arr)
 							return li;
 						}
 }
-
->>>>>>> ea095a6bfb7cf4b7434a652bde0d66749a815b30
