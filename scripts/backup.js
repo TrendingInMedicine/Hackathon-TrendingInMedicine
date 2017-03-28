@@ -18,9 +18,9 @@ function display(){
 					j = 1;
 					i = i + 1;
 					//console.log(i);
-					if(i > 10)
+					if(i > 9)
 					break;
-					//	console.log(x);
+					console.log(x);
 					var myDiv = document.createElement("DIV");
 					myDiv.setAttribute("id", "top" + i);
 					myDiv.innerHTML = "#" + x[0];
@@ -32,6 +32,7 @@ function display(){
 						//console.log(x[1].size);
 						lengths.push(x[1].size);
 						var doi = y;
+						console.log(doi);
 						var abstractURL = aSearchURL + doi + format;
 						//console.log(abstractURL);
 						$.ajax({
@@ -45,7 +46,7 @@ function display(){
 							console.log(temp_json);
 							// 					//console.log(i);
 							var data = temp_json["full-text-retrieval-response"]["coredata"];
-							console.log(data);
+							//console.log(data);
 							var title = data["dc:title"]
 							var url = data["link"][1]["@href"]
 							var doi = data["prism:doi"]
@@ -56,33 +57,23 @@ function display(){
 							desc = desc.replace(/['“]+/g, '');
 							desc = desc.replace(/['"]+/g, '');
 							links.push(url);
+							console.log(desc);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
 							// 					// 	addList();
 							// 					// }
-							var desDiv = document.createElement("a");
-							desDiv.setAttribute("class", "snow")
-							var br = document.createElement("br");
-							desDiv.innerHTML = desc;
-							desDiv.href = url;
-							var top = "#top" + j;
-							console.log(top);
-							$(top).append(br);
-							$(top).append(desDiv);
-							//
-							// 					$("#result" + i).html(x[0]);
-							// 			  });
-							// 			}
-							// 			myDiv.setAttribute("class", "boshal");
-							//
-							// 		}
-							// 	}
-							// });
+							//var desDiv = document.createElement("a");
+							//desDiv.setAttribute("class", "snow")
+							//var br = document.createElement("br");
+							//desDiv.innerHTML = desc;
+							//desDiv.href = url;
+							//var top = "#top" + j;
+							//console.log(top);
+							//$(top).append(br);
+							//$(top).append(desDiv);
+			
 						});
 					}
-
-				//	j = j + 1;
-
 				}
 			}
 		}
