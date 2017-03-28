@@ -18,7 +18,7 @@ function display(){
 					j = 1;
 					i = i + 1;
 					//console.log(i);
-					if(i > 9)
+					if(i > 10)
 					break;
 					console.log(x);
 					var myDiv = document.createElement("DIV");
