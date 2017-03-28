@@ -41,11 +41,19 @@ function display(){
 							dataType: "json",
 							data: { url : abstractURL }
 						})
+<<<<<<< HEAD
 
 						.done(function( json_contents ) {
 							temp_json = json_contents;
 							lengths.push(temp_json);
 
+=======
+
+						.done(function( json_contents ) {
+							temp_json = json_contents;
+							lengths.push(temp_json);
+
+>>>>>>> ea095a6bfb7cf4b7434a652bde0d66749a815b30
 						});
 					}
 				}
@@ -75,6 +83,26 @@ function getDescriptions(arr)
 						}
 						if(arr.length === li.length)
 						{
-							console.log(li);
+							return li;
+						}
+							// 					// li.push(desc);
+							// 					// if(li.length == 52){
+							// 					// 	addList();
+							// 					// }
+							//var desDiv = document.createElement("a");
+							//desDiv.setAttribute("class", "snow")
+							//var br = document.createElement("br");
+							//desDiv.innerHTML = desc;
+							//desDiv.href = url;
+							//var top = "#top" + j;
+							//console.log(top);
+							//$(top).append(br);
+							//$(top).append(desDiv);
+						}
+						if(arr.length === li.length)
+						{
+							return li;
 						}
 }
+
+>>>>>>> ea095a6bfb7cf4b7434a652bde0d66749a815b30
