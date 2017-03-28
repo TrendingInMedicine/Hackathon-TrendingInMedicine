@@ -97,6 +97,6 @@ function getDescriptions(arr)
 						}
 						if(arr.length === li.length)
 						{
-							return li;
+							console.log(li);
 						}
 }
