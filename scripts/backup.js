@@ -49,10 +49,10 @@ function display(){
 						});
 					}
 				}
+				getDescriptions(lengths);
 			}
 		}
 	});
-	getDescriptions(lengths);
 }
 function getDescriptions(arr)
 {
