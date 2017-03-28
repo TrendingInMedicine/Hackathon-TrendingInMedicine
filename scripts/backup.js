@@ -16,6 +16,7 @@ function display(){
 				for(var x of myMap)  {
 
 					var temp_json = "";
+					var json_contents = "";
 					j = 1;
 					i = i + 1;
 					//console.log(i);
@@ -42,6 +43,7 @@ function display(){
 							dataType: "json",
 							data: { url : abstractURL }
 						})
+						
 						.done(function( json_contents ) {
 							temp_json = json_contents;
 							console.log(temp_json);
@@ -58,7 +60,7 @@ function display(){
 							desc = desc.replace(/['“]+/g, '');
 							desc = desc.replace(/['"]+/g, '');
 							links.push(url);
-							console.log(desc);
+							console.log(x[0], desc);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
 							// 					// 	addList();
