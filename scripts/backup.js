@@ -83,7 +83,7 @@ function getDescriptions(arr)
 						}
 						if(arr.length === li.length)
 						{
-							return li;
+							console.log(li);
 						}
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
