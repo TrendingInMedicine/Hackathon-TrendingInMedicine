@@ -88,7 +88,7 @@ function getDescriptions(arr)
 						}
 						if(arr.length === li.length)
 						{
-							return;
+							return li;
 						}
 }
 
