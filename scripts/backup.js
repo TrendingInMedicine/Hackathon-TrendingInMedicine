@@ -14,6 +14,7 @@ function display(){
 			var i= 0;
 			if(id == "mar2017"){
 				for(var x of myMap)  {
+
 					var temp_json = "";
 					j = 1;
 					i = i + 1;
@@ -30,7 +31,7 @@ function display(){
 					//var j = 0;
 					for (var y of x[1]) {
 						//console.log(x[1].size);
-						lengths.push(x[1].size);
+						lengths.push(y);
 						var doi = y;
 						console.log(doi);
 						var abstractURL = aSearchURL + doi + format;
