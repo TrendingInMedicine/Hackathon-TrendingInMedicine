@@ -45,7 +45,21 @@ function display(){
 						.done(function( json_contents ) {
 							temp_json = json_contents;
 							lengths.push(temp_json);
-							var data = temp_json["full-text-retrieval-response"]["coredata"];
+			
+						});
+					}
+				}
+			}
+		}
+	});
+	getDescriptions(lengths);
+}
+function getDescriptions(arr)
+{
+	console.log(arr);
+				for (var i of arr)
+				{
+							var data = i["full-text-retrieval-response"]["coredata"];
 							//console.log(data);
 							var title = data["dc:title"]
 							var url = data["link"][1]["@href"]
@@ -56,6 +70,7 @@ function display(){
 							desc = desc.replace(/['”]+/g, '');
 							desc = desc.replace(/['“]+/g, '');
 							desc = desc.replace(/['"]+/g, '');
+							li.push(desc);
 							links.push(url);
 							// 					// li.push(desc);
 							// 					// if(li.length == 52){
@@ -70,12 +85,6 @@ function display(){
 							//console.log(top);
 							//$(top).append(br);
 							//$(top).append(desDiv);
-			
-						});
-					}
-				}
-			}
-		}
-	});
-	console.log(lengths);
+						}
 }
+
